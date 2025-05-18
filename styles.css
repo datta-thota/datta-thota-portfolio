@@ -1,0 +1,260 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg, #f4f4f4, #e3f2fd);
+  color: #222;
+  line-height: 1.6;
+}
+
+/* Hero */
+#hero {
+  height: 100vh;
+  background: linear-gradient(to right, #3e8ef7, #6dd5ed);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+}
+
+.animated-title {
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  animation: fadeInUp 1.2s ease-in-out;
+}
+
+.tagline {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  margin: 10px;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn.primary {
+  background-color: #ffffff;
+  color: #3e8ef7;
+  border: 2px solid #ffffff;
+}
+
+.btn.secondary {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.glass-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.glass-section.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tab-panel {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.tab-panel.active {
+  display: block;
+  opacity: 1;
+}
+
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Cards */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  padding: 20px;
+  width: 280px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.dark .card {
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+/* Timeline */
+.timeline {
+  list-style: none;
+  padding-left: 0;
+  text-align: left;
+}
+
+.timeline li {
+  padding: 10px 0;
+  border-left: 4px solid #3e8ef7;
+  margin-left: 20px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.timeline li::before {
+  content: "🎬";
+  position: absolute;
+  left: -28px;
+  top: 10px;
+}
+
+/* Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px 15px;
+  width: 100%;
+  max-width: 600px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.contact-form button {
+  background-color: #3e8ef7;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #2767d4;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background-color: white;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+
+/* Social Links */
+.socials {
+  margin-top: 20px;
+}
+
+.socials a {
+  color: #3e8ef7;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.socials a:hover {
+  color: #0051a2;
+}
+
+/* Footer */
+footer {
+  background-color: #0a0f23;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 60px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.skill-box {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+}
+
+.skill-box:hover {
+  transform: translateY(-6px);
+}
+
+.dark .skill-box {
+  background-color: rgba(30, 30, 30, 0.8);
+  color: white;
+}
+
+.light {
+  background-color: #f4f9ff;
+}
