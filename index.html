@@ -2,11 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Purushothama Datta Thota — Developer, Problem Solver, and Machine Learning Enthusiast." />
+  <meta name="author" content="Purushothama Datta Thota" />
+  <meta property="og:title" content="Purushothama Datta Thota | Portfolio" />
+  <meta property="og:description" content="Aspiring developer passionate about building intuitive applications and learning new technologies." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="your-image-link.jpg" />
+  <meta property="og:url" content="https://your-portfolio-link.com" />
+
   <title>Purushothama Datta Thota | Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
 </head>
+
 <body>
 
 <!-- Hero -->
@@ -14,10 +23,10 @@
   <div class="hero-content">
     <h1 class="animated-title">Purushothama Datta Thota</h1>
     <p class="tagline">Developer | Problem Solver | Learner</p>
-    <div class="buttons">
-      <a href="#about" class="btn primary">Explore More</a>
-      <a href="#contact" class="btn secondary">Connect with Me</a>
-    </div>
+    <nav class="buttons">
+      <a href="#about" class="btn primary" role="button">Explore More</a>
+      <a href="#contact" class="btn secondary" role="button">Connect with Me</a>
+    </nav>
   </div>
 </header>
 
@@ -31,6 +40,7 @@
   </div>
 </section>
 
+<!-- Skills -->
 <section id="skills" class="glass-section light">
   <div class="container">
     <h2>Skills & Tools</h2>
@@ -125,7 +135,7 @@
   <div class="container">
     <h2>Resume</h2>
     <p>You can download my resume below.</p>
-    <a href="D:\Cinema Portfolio\resources\Purushothama Datta Thota.pdf" download class="btn primary">📄 Download Resume</a>
+    <a href="resources/Purushothama_Datta_Thota.pdf" download class="btn primary" role="button">📄 Download Resume</a>
   </div>
 </section>
 
@@ -134,25 +144,25 @@
   <div class="container">
     <h2>Get in Touch</h2>
     <form class="contact-form" id="contactForm">
-  <input type="text" placeholder="Your Name" required />
-  <input type="email" placeholder="Your Email" required />
-  <textarea rows="4" placeholder="Your Message" required></textarea>
-  <button type="submit" class="btn secondary">Send</button>
-  <p class="form-success" style="display:none; color: green; margin-top: 15px;">
-    ✅ Your message was sent successfully!
-  </p>
-</form>
+      <input type="text" placeholder="Your Name" required aria-label="Your Name" />
+      <input type="email" placeholder="Your Email" required aria-label="Your Email" />
+      <textarea rows="4" placeholder="Your Message" required aria-label="Your Message"></textarea>
+      <button type="submit" class="btn secondary" role="button">Send</button>
+      <p class="form-success" style="display:none; color: green; margin-top: 15px;">
+        ✅ Your message was sent successfully!
+      </p>
+    </form>
 
     <div class="socials">
-      <a href="https://www.linkedin.com/in/purushothama-datta/" target="_blank">LinkedIn</a>
-      <a href="https://github.com/datta-thota" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/purushothama-datta/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://github.com/datta-thota" target="_blank" rel="noopener noreferrer">GitHub</a>
     </div>
   </div>
 </section>
 
 <!-- Footer -->
 <footer>
-  <p>© 2025 Purushothama Datta Thota</p>
+  <p>© 2025 Purushothama Datta Thota. All rights reserved.</p>
 </footer>
 
 <script src="script.js"></script>
