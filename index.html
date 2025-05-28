@@ -291,10 +291,12 @@ I'm <strong>Purushothama Datta Thota</strong>, a passionate UI Designer, softwar
       }
     },
     interactivity: {
-      detect_on: "canvas",
+      detect_on: "window",
       events: {
         onhover: { enable: true, mode: "grab" },
-        onclick: { enable: true, mode: "push" }
+        onclick: { enable: true, mode: "push" },
+       resize: true // Add this to handle screen changes
+
       },
       modes: {
         grab: { distance: 140, line_linked: { opacity: 0.6 } },
