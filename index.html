@@ -17,11 +17,177 @@
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
   <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #111;
+      color: #fff;
+    }
+
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem 0;
+    }
+
+    section {
+      padding: 2rem 0;
+    }
+
+    .glass-section {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      backdrop-filter: blur(10px);
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .light {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .dark {
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    
+
+    /* Hero */
+    #hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: #000;
+      overflow: hidden;
+    }
+
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      color: white;
+    }
+
+    .animated-title {
+      font-size: 2.5rem;
+    }
+
+    .tagline {
+      font-size: 1.2rem;
+      margin: 1rem 0;
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: space-between;
+    }
+
+    .skill-box {
+      flex: 1 1 45%;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1rem;
+      border-radius: 8px;
+    }
+
+    /* Project Cards */
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .card {
+      flex: 1 1 48%;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1rem;
+      border-radius: 8px;
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 8px;
+      margin: 1rem 0;
+    }
+
+
+    
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      background: #000;
+      color: #999;
+      font-size: 0.9rem;
+    }
+
+    /* Media Queries */
+    @media (max-width: 768px) {
+      .skills-grid, .cards, .design-grid, .social-icons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .skill-box, .card, .design-card {
+        flex: 1 1 100%;
+      }
+
+      .animated-title {
+        font-size: 1.8rem;
+      }
+
+      .tagline {
+        font-size: 1rem;
+      }
+
+      .btn {
+        width: 100%;
+        margin: 0.5rem 0;
+      }
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .skill-box, .card, .design-card {
+        flex: 1 1 45%;
+      }
+
+      .animated-title {
+        font-size: 2.2rem;
+      }
+
+      .tagline {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- Hero -->
 <!-- Hero -->
 <header id="hero">
   <div id="particles-js"></div>
@@ -74,7 +240,7 @@ I'm <strong>Purushothama Datta Thota</strong>, a passionate UI Designer, softwar
 
       <div class="skill-box">
         <h3><i class="fas fa-brain"></i> Focus Areas</h3>
-        <p>Full-Stack Development, Machine Learning</p>
+        <p>Full-Stack Development, UI UX Designer, Data science</p>
       </div>
 
     </div>
