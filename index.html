@@ -203,13 +203,28 @@
 
 <br>
 <!-- About -->
+<!-- About -->
 <section id="about" class="glass-section">
-  <div class="container">
-    <h2>About Me</h2>
-    <p>
-I'm <strong>Purushothama Datta Thota</strong>, a passionate UI Designer, software developer, and Data Science enthusiast, currently pursuing my B.Tech in Information Technology at Seshadri Rao Gudlavalleru Engineering College. I enjoy crafting clean, intuitive user interfaces, building functional applications, and working with data-driven technologies. With a keen eye for design and a love for code, I strive to create digital experiences that are both beautiful and impactful.    </p>
+  <div class="container" style="display: flex; align-items: center; gap: 40px; flex-wrap: wrap;">
+    
+    <!-- Left: Image -->
+    <div style="flex: 1; display: flex; justify-content: center;">
+      <img src="Datta.jpg"
+           alt="Purushothama Datta Thota" 
+           style="width: 300px; height: 300px; border-radius: 10%; object-fit: cover;">
+    </div>
+    
+    <!-- Right: Text -->
+    <div style="flex: 2;">
+      <h2>About Me</h2>
+      <p>
+        I'm <strong>Purushothama Datta Thota</strong>, a passionate UI Designer, software developer, and Data Science enthusiast, currently pursuing my B.Tech in Information Technology at Seshadri Rao Gudlavalleru Engineering College. I enjoy crafting clean, intuitive user interfaces, building functional applications, and working with data-driven technologies. With a keen eye for design and a love for code, I strive to create digital experiences that are both beautiful and impactful.
+      </p>
+    </div>
+    
   </div>
 </section>
+
 <br>
 <br>
 <!-- Skills -->
@@ -227,7 +242,10 @@ I'm <strong>Purushothama Datta Thota</strong>, a passionate UI Designer, softwar
         <h3><i class="fas fa-globe"></i> Web Technologies</h3>
         <p>HTML, CSS, React.js</p>
       </div>
-
+     <div class="skill-box">
+        <h3><i class="fas fa-code"></i> App Technologies</h3>
+        <p>React Native</p>
+      </div>
       <div class="skill-box">
         <h3><i class="fas fa-database"></i> Databases</h3>
         <p>MongoDB, SQL, MySQL</p>
@@ -253,29 +271,32 @@ I'm <strong>Purushothama Datta Thota</strong>, a passionate UI Designer, softwar
   <div class="container">
     <h2>Projects</h2>
     <div class="cards">
-     <article class="card">
-  <h3>The Inexpen Pharma</h3>
-  <div class="project-gallery">
-    <img src="images/l1.png" alt="Screenshot 1" />
-    <img src="images/l2.png" alt="Screenshot 2" />
-    <img src="images/l3.png" alt="Screenshot 3" />
-    <img src="images/l4.png" alt="Screenshot 4" />
-  </div>
-  <p>
-    An e-commerce platform focused on accessibility to affordable medicines. Designed with Figma, developed with React.js and SQL.
-  </p>
-  <a href="https://github.com/datta-thota/The-Inexpen-Pharma" target="_blank" class="btn secondary" role="button">
-    <i class="fab fa-github"></i> View on GitHub
-  </a>
-</article>
+          
+      <article class="card">
+        <h3>NoteForge</h3>
+        <img src="images/NoteForge.png" alt="Beyond CAPTCHA Screenshot" />
+        <p>
+NoteForge is a student-powered note-sharing platform built using React Native (Expo), Express.js, MongoDB, and Cloudinary. It enables students to upload and access study notes organized by topic, subject, and semester.        </p>
+        <a href="https://github.com/datta-thota/NoteForge" target="_blank" class="btn secondary" role="button"><i class="fab fa-github"></i> View on GitHub</a>
+      </article>
 
-     <article class="card">
+
+       <article class="card">
         <h3>Beyond CAPTCHA</h3>
         <img src="images/j1.png" alt="Beyond CAPTCHA Screenshot" />
         <p>
           A modern security solution replacing traditional CAPTCHA with behavioral biometrics. Built using Python, React.js, and TensorFlow.
         </p>
         <a href="https://github.com/datta-thota/Beyond-CAPTCHA" target="_blank" class="btn secondary" role="button"><i class="fab fa-github"></i> View on GitHub</a>
+      </article>
+
+     <article class="card">
+        <h3>The Inexpen Pharma</h3>
+        <img src="images/inexp.png" alt="Beyond CAPTCHA Screenshot" />
+        <p>
+    An e-commerce platform focused on accessibility to affordable medicines. Designed with Figma, developed with React.js and SQL.
+        </p>
+        <a href="https://github.com/datta-thota/The-Inexpen-Pharma" target="_blank" class="btn secondary" role="button"><i class="fab fa-github"></i> View on GitHub</a>
       </article>
 
       
@@ -291,6 +312,55 @@ I'm <strong>Purushothama Datta Thota</strong>, a passionate UI Designer, softwar
     <h2>UI/UX Design Work</h2>
     <p class="section-intro">Here are some of my best UI designs showcasing clean layouts, user-centered thinking, and aesthetic interfaces.</p>
 
+    <!-- Highlighted Project 1 -->
+    <div class="project-block highlighted-project">
+      <h3 class="highlighted-title">🌟 NoteForge – Upload Notes. Empower Learning.</h3>
+      <p class="project-description">
+NoteForge is a student-powered platform built with one goal in mind:
+
+To let students upload notes for fellow students.
+
+Whether it's lecture notes, assignments, or revision material — NoteForge makes it easy to share and access study resources by topic, subject, semester, and college.      </p>
+      <div class="design-grid">
+        <div class="design-card">
+          <img src="images/1.jpg" alt="UIDAI homepage with accessibility options" class="popupTrigger" />
+          <p>Landing page with Get started Option</p>
+        </div>
+        <div class="design-card">
+          <img src="images/2.jpg" alt="Behavior-based authentication UI" class="popupTrigger" />
+          <p>Login page</p>
+        </div>
+        <div class="design-card">
+          <img src="images/3.jpg" alt="UIDAI login dashboard" class="popupTrigger" />
+          <p>Sign up page</p>
+        </div>
+        <div class="design-card">
+          <img src="images/4.jpg" alt="UIDAI login dashboard" class="popupTrigger" />
+          <p>Home page with notes upload feature and all accessibility options</p>
+        </div>
+        <div class="design-card">
+          <img src="images/5.jpg" alt="UIDAI login dashboard" class="popupTrigger" />
+          <p>Notes upload dashboard</p>
+        </div>
+        <div class="design-card">
+          <img src="images/6.jpg" alt="UIDAI login dashboard" class="popupTrigger" />
+          <p>Attedence calculator tool</p>
+        </div>
+        <div class="design-card">
+          <img src="images/7.jpg" alt="UIDAI login dashboard" class="popupTrigger" />
+          <p>scientific calculator for students</p>
+        </div>
+        <div class="design-card">
+          <img src="images/8.jpg" alt="UIDAI login dashboard" class="popupTrigger" />
+          <p>Profile dashboard</p>
+        </div>
+      </div>
+      <div class="modal project-modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" alt="Expanded Design Preview" />
+  </div>
+    </div>
+    
     <!-- Highlighted Project 1 -->
     <div class="project-block highlighted-project">
       <h3 class="highlighted-title">🌟 UIDAI Website Login Page Redesign</h3>
