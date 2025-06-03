@@ -99,51 +99,114 @@
 @media (max-width: 768px) {
   .title {
     font-size: 15vw;
-    -webkit-text-stroke: 1px black;
+    -webkit-text-stroke: 0.8px rgb(0, 0, 0);
     letter-spacing: 0.02em;
   }
 
+
   .name {
-    font-size: 10vw;
-    bottom: 8%;
+    font-size: 12vw;
+    bottom: 10%;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   }
 
   .photo {
-    height: 65vh;
+    height: 70vh;
     bottom: 0;
+    filter: grayscale(80%) brightness(80%) contrast(1.1);
   }
 
   .scrolling-inner {
-    font-size: 4vw;
+    font-size: 4.5vw;
+  }
+
+  .scrolling-text {
+    padding: 0.7rem 0;
+    background: linear-gradient(to right, #111, #222);
+    border-bottom: 2px solid #3d5af1;
   }
 }
 
 @media (max-width: 480px) {
   .title {
     font-size: 15vw;
-    -webkit-text-stroke: 0.8px black;
+    -webkit-text-stroke: 0.8px rgb(0, 0, 0);
+    letter-spacing: 0.02em;
   }
 
   .name {
-    font-size: 12vw;
-    bottom: 6%;
+    font-size: 14vw;
+    bottom: 20%;
   }
 
   .photo {
-    height: 55vh;
-    bottom: 0;
+    height: 60vh;
   }
 
   .scrolling-inner {
-    font-size: 5vw;
+    font-size: 5.5vw;
+  }
+}
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
   }
 }
 
+.hero-quote {
+  display: none; /* Hidden by default */
+}
+
+/* Show only on mobile screens */
+@media (max-width: 480px) {
+  .hero-quote {
+    display: block;
+font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(20px, 6vw, 36px);
+    font-weight: 700;
+    color: #111;
+    text-align: left;
+    margin-top: 2rem;
+    padding: 0 16px;
+    z-index: 100;
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    animation: fadeInQuote 1.2s ease-out 0.3s forwards;
+  }
+
+  .hero-quote span {
+    color: #ff0000;
+    font-style: italic;
+  }
+}
+
+@keyframes fadeInQuote {
+  from {
+    opacity: 0;
+    transform: translateY(20px) translateX(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) translateX(-50%);
+  }
+}
 
 
   </style>
 </head>
 <body>
+<div class="hero-quote">
+  “You’re not here by accident . <span>this was built with you in mind..</span>”
+</div>
+
     <div class="scrolling-text">
   <div class="scrolling-inner">
    <span>Designer – Developer – Human • </span>
