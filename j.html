@@ -96,6 +96,42 @@
   font-family: 'Archivo Black', sans-serif;
   letter-spacing: 0.05em;
 }
+@media (max-width: 768px) {
+  .title {
+    font-size: 22vw; /* increase for mobile to make it bolder, but reduce overflow */
+    -webkit-text-stroke: 1.2px black;
+    letter-spacing: 0.03em;
+  }
+
+  .name {
+    font-size: 12vw;
+    bottom: 6%;
+  }
+
+  .photo {
+    height: 60vh;
+  }
+
+  .scrolling-inner {
+    font-size: 4vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 26vw;
+    -webkit-text-stroke: 1px black;
+  }
+
+  .name {
+    font-size: 14vw;
+    bottom: 4%;
+  }
+
+  .scrolling-inner {
+    font-size: 5vw;
+  }
+}
 
 
   </style>
