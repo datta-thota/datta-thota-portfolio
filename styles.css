@@ -548,3 +548,14 @@ footer {
   border-radius: 8px;
 }
 
+#dragNav.shrunk {
+  padding: 6px 18px !important;
+  min-width: 200px !important;
+  max-width: 80% !important;
+  height: 36px !important;
+  transform: translateX(-50%) scale(0.9) !important;
+}
+
+#dragNav:hover {
+  transform: translateX(-50%) scale(1) !important;
+}

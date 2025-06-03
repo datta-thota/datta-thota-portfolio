@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Datta Thota Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Meow+Script&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      height: 100%;
+      background: #fff;
+      overflow: hidden;
+      font-family: 'Archivo Black', sans-serif;
+    }
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .bg-stripe {
+      position: absolute;
+      width: 100%;
+      height: 33.333%;
+      z-index: 0;
+    }
+    .bg-top { top: 0; background: #ffecd2; }
+    .bg-middle { top: 33.333%; background: #3d5af1; }
+    .bg-bottom { bottom: 0; background: #f26b6b; }
+
+    .title {
+      font-size: 15vw;
+      text-transform: uppercase;
+      color: transparent;
+      -webkit-text-stroke: 2px black;
+      display: flex;
+      position: relative;
+      z-index: 1;
+      letter-spacing: 0.05em;
+    }
+    .title span {
+      opacity: 0;
+    }
+    .name {
+  position: absolute;
+  bottom: 10%; /* decrease to move lower */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  font-family: 'Meow Script', cursive;
+  font-size: 15vw;
+  color: white;
+  white-space: nowrap;
+}
+
+    .photo {
+      position: absolute;
+      z-index: 1;
+      height: 90vh;
+      bottom: 0;
+      object-fit: contain;
+      pointer-events: none;
+   filter: grayscale(100%) brightness(70%) ;
+
+
+    }
+
+.scrolling-text {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 0.5rem 0;
+  backdrop-filter: blur(5px);
+}
+
+.scrolling-inner {
+  display: inline-block;
+  white-space: nowrap;
+  font-size: 1.6vw;
+  color: #fff;
+  font-weight: bold;
+  font-family: 'Archivo Black', sans-serif;
+  letter-spacing: 0.05em;
+}
+
+
+  </style>
+</head>
+<body>
+    <div class="scrolling-text">
+  <div class="scrolling-inner">
+   <span>Designer – Developer – Human • </span>
+<span>Thinker – Maker – Coder • </span>
+<span>Clean – Simple – Effective • </span>
+<span>Ideas – Code – Impact • </span>
+<span>Focus – Flow – Finish • </span>
+<span>Sketch – Build – Ship • </span>
+<span>Neat – Sharp – Clear • </span>
+
+
+  </div>
+</div>
+
+  <div class="hero">
+    <div class="bg-stripe bg-top"></div>
+    <div class="bg-stripe bg-middle"></div>
+    <div class="bg-stripe bg-bottom"></div>
+    <h1 class="title" id="title">
+      <span>P</span><span>O</span><span>R</span><span>T</span><span>F</span><span>O</span><span>L</span><span>I</span><span>O</span>
+    </h1>
+    <div class="name">Datta Thota</div>
+    <img src="dp1.png" alt="Profile" class="photo" />
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script>
+    gsap.fromTo(".bg-top", {y: "-100%"}, {y: 0, duration: 1.2, ease: "power4.out"});
+    gsap.fromTo(".bg-middle", {x: "-100%"}, {x: 0, duration: 1.2, delay: 0.3, ease: "power4.out"});
+    gsap.fromTo(".bg-bottom", {y: "100%"}, {y: 0, duration: 1.2, delay: 0.6, ease: "power4.out"});
+
+    gsap.to(".title span", {
+      opacity: 1,
+      y: 0,
+      stagger: 0.1,
+      duration: 0.6,
+      delay: 1.5,
+      ease: "back.out(1.7)"
+    });
+
+    gsap.from(".name", {
+      y: 100,
+      opacity: 0,
+      duration: 1,
+      delay: 2,
+      ease: "expo.out"
+    });
+
+    gsap.from(".photo", {
+      scale: 1.3,
+      y: 200,
+      duration: 1.2,
+      delay: 1.2,
+      ease: "power3.out"
+    });
+    gsap.to(".scrolling-inner", {
+    xPercent: -50,
+    repeat: -1,
+    duration: 20,
+    ease: "linear"
+  });
+  </script>
+</body>
+</html>

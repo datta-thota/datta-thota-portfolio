@@ -188,42 +188,140 @@
 
 <body>
 
-<!-- Hero -->
-<header id="hero">
-  <div id="particles-js"></div>
-  <div class="hero-content">
-    <h1 class="animated-title">Purushothama Datta Thota</h1>
-    <p class="tagline">Developer | Designer | Learner</p>
-    <div class="buttons">
-      <a href="#about" class="btn primary" role="button">Explore More</a>
-      <a href="#contact" class="btn secondary" role="button">Connect with Me</a>
+<header id="hero" style="position: relative;">
+
+  <!-- Apple Dynamic Island-like Navbar -->
+   
+  <nav id="dynamicNav" style="
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+    border-radius: 999px;
+    height: 48px;
+    min-width: 320px;
+    max-width: 90%;
+    z-index: 20;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    transition: all 0.4s ease;
+  "
+  onmouseenter="expandNav()"
+  onmouseleave="shrinkNav()"
+  >
+    <!-- Name -->
+    <div style="
+      font-size: 18px;
+      font-weight: bold;
+      color: #fff;
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: 1px;
+      margin-right: 24px;
+      white-space: nowrap;
+    ">
+      Datta Thota
     </div>
-  </div>
+
+    <!-- Buttons -->
+    <div style="display: flex; gap: 12px;">
+      <a href="#about" role="button" style="
+        padding: 6px 14px;
+        background-color: #111;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 999px;
+        font-size: 13px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        display: inline-block;
+      "
+      onmouseover="this.style.backgroundColor='#2a2a2a'; this.style.transform='scale(1.05)';"
+      onmouseout="this.style.backgroundColor='#111'; this.style.transform='scale(1)';"
+      >Explore</a>
+
+      <a href="#projects" role="button" style="
+        padding: 6px 14px;
+        background-color: #1b1b1b;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 999px;
+        font-size: 13px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        display: inline-block;
+      "
+      onmouseover="this.style.backgroundColor='#444'; this.style.transform='scale(1.05)';"
+      onmouseout="this.style.backgroundColor='#1b1b1b'; this.style.transform='scale(1)';"
+      >Projects</a>
+
+      <a href="#contact" role="button" style="
+        padding: 6px 14px;
+        background-color: #1b1b1b;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 999px;
+        font-size: 13px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        display: inline-block;
+      "
+      onmouseover="this.style.backgroundColor='#444'; this.style.transform='scale(1.05)';"
+      onmouseout="this.style.backgroundColor='#1b1b1b'; this.style.transform='scale(1)';"
+      >Connect</a>
+    </div>
+  </nav>
+
+  <!-- Background Iframe -->
+  <iframe src="j.html" style="width:100%; height:100vh; border:none;" loading="lazy"></iframe>
 </header>
+
+
+
+
 
 <br>
 <!-- About -->
 <!-- About -->
-<section id="about" class="glass-section">
-  <div class="container" style="display: flex; align-items: center; gap: 40px; flex-wrap: wrap;">
-    
-    <!-- Left: Image -->
-    <div style="flex: 1; display: flex; justify-content: center;">
-      <img src="Datta.jpg"
-           alt="Purushothama Datta Thota" 
-           style="width: 300px; height: 300px; border-radius: 10%; object-fit: cover;">
+<section id="about" class="glass-section" style="padding: 80px 20px; background: rgba(20, 20, 20, 0.9); border-radius: 20px; color: #eaeaea;">
+  <div class="container" style="max-width: 1100px; margin: auto; display: flex; flex-wrap: wrap; align-items: center; gap: 40px;">
+
+    <!-- Profile Image -->
+    <div style="flex: 1; min-width: 280px; display: flex; justify-content: center;">
+      <img src="Datta.jpg" alt="Purushothama Datta Thota"
+           style="width: 280px; height: 280px; object-fit: cover; border-radius: 50%; border: 3px solid rgba(255,255,255,0.1); filter: grayscale(100%) brightness(1.1); box-shadow: 0 10px 30px rgba(0,0,0,0.4);">
     </div>
-    
-    <!-- Right: Text -->
-    <div style="flex: 2;">
-      <h2>About Me</h2>
-      <p>
-        I'm <strong>Purushothama Datta Thota</strong>, a passionate UI Designer, software developer, and Data Science enthusiast, currently pursuing my B.Tech in Information Technology at Seshadri Rao Gudlavalleru Engineering College. I enjoy crafting clean, intuitive user interfaces, building functional applications, and working with data-driven technologies. With a keen eye for design and a love for code, I strive to create digital experiences that are both beautiful and impactful.
+
+    <!-- Story-Driven Text -->
+    <div style="flex: 2; min-width: 300px;">
+      <h2 style="font-size: 2.5rem; color: white; margin-bottom: 15px;">Who is Datta?</h2>
+
+      <p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 25px;">
+        I’m a <strong style="color: #fff;">developer who designs</strong> and a <strong style="color: #fff;">designer who codes</strong>.
+        I bring ideas to life with code and creativity. Whether it's an elegant UI, a clever ML model, or an expressive story in pixels — I’m always creating.
       </p>
+
+      <!-- Keywords / Tags -->
+      <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 25px;">
+        <span style="padding: 6px 14px; background: rgba(255,255,255,0.05); border-radius: 999px; font-size: 0.85rem;">🎨 UI/UX Designer</span>
+        <span style="padding: 6px 14px; background: rgba(255,255,255,0.05); border-radius: 999px; font-size: 0.85rem;">💻 Full Stack Dev</span>
+        <span style="padding: 6px 14px; background: rgba(255,255,255,0.05); border-radius: 999px; font-size: 0.85rem;">📊 Data Science</span>
+        <span style="padding: 6px 14px; background: rgba(255,255,255,0.05); border-radius: 999px; font-size: 0.85rem;">📍 India</span>
+        <span style="padding: 6px 14px; background: rgba(255,255,255,0.05); border-radius: 999px; font-size: 0.85rem;">🎓 B.Tech IT @ SRGEC</span>
+        <span style="padding: 6px 14px; background: rgba(255,255,255,0.05); border-radius: 999px; font-size: 0.85rem;">🧠 ACM Chair</span>
+      </div>
     </div>
-    
   </div>
 </section>
+
+
 
 <br>
 <br>
@@ -266,154 +364,167 @@
 </section>
 <br>
 <br>
-<!-- Projects -->
-<section id="projects" class="glass-section">
-  <div class="container">
-    <h2>Projects</h2>
-    <div class="cards">
-          
-      <article class="card">
-        <h3>NoteForge</h3>
-        <img src="images/NoteForge.png" alt="Beyond CAPTCHA Screenshot" />
-        <p>
-NoteForge is a student-powered note-sharing platform built using React Native (Expo), Express.js, MongoDB, and Cloudinary. It enables students to upload and access study notes organized by topic, subject, and semester.        </p>
-        <a href="https://github.com/datta-thota/NoteForge" target="_blank" class="btn secondary" role="button"><i class="fab fa-github"></i> View on GitHub</a>
-      </article>
+<section id="projects" class="glass-section" style="padding: 60px 20px; background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border-radius: 20px; overflow: hidden;">
+  <div class="container" style="max-width: 1200px; margin: auto;">
+    <h2 style="font-size: 2.8rem; text-align: center; margin-bottom: 40px; font-family: 'Bebas Neue', sans-serif; color: #fff; letter-spacing: 1px;">
+      Featured Projects
+    </h2>
 
+    <div class="project-slider" style="display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 10px; scrollbar-width: none; -ms-overflow-style: none;">
+      <style>
+        .project-slider::-webkit-scrollbar {
+          display: none;
+        }
+        .project-card:hover {
+          transform: scale(1.02);
+        }
 
-       <article class="card">
-        <h3>Beyond CAPTCHA</h3>
-        <img src="images/j1.png" alt="Beyond CAPTCHA Screenshot" />
-        <p>
-          A modern security solution replacing traditional CAPTCHA with behavioral biometrics. Built using Python, React.js, and TensorFlow.
+        @media (max-width: 600px) {
+          .project-card {
+            min-width: 240px !important;
+            padding: 12px !important;
+          }
+
+          .project-card img {
+            height: 140px !important;
+          }
+
+          .project-card h3 {
+            font-size: 1.1rem !important;
+          }
+
+          .project-card p {
+            font-size: 0.85rem !important;
+          }
+
+          .project-card a {
+            font-size: 0.85rem !important;
+            padding: 6px 10px !important;
+          }
+        }
+      </style>
+
+      <!-- CARD TEMPLATE -->
+      <article class="project-card" style="min-width: 280px; scroll-snap-align: start; background: rgba(255,255,255,0.08); border-radius: 16px; box-shadow: 0 6px 20px rgba(0,0,0,0.2); padding: 16px; transition: transform 0.3s ease; flex-shrink: 0; display: flex; flex-direction: column; justify-content: space-between;">
+        <h3 style="font-size: 1.3rem; color: #fff; margin-bottom: 10px;">NoteForge</h3>
+        <img src="images/NoteForge.png" alt="NoteForge" style="border-radius: 10px; width: 100%; height: 160px; object-fit: cover; margin-bottom: 12px;" />
+        <p style="color: #ddd; font-size: 0.9rem; margin-bottom: 12px;">
+          A note-sharing platform built with React Native, Express.js, MongoDB, and Cloudinary.
         </p>
-        <a href="https://github.com/datta-thota/Beyond-CAPTCHA" target="_blank" class="btn secondary" role="button"><i class="fab fa-github"></i> View on GitHub</a>
+        <a href="https://github.com/datta-thota/NoteForge" target="_blank" style="text-align: center; background: #000; color: #fff; padding: 8px 12px; border-radius: 8px; text-decoration: none;">🔗 GitHub</a>
       </article>
 
-     <article class="card">
-        <h3>The Inexpen Pharma</h3>
-        <img src="images/inexp.png" alt="Beyond CAPTCHA Screenshot" />
-        <p>
-    An e-commerce platform focused on accessibility to affordable medicines. Designed with Figma, developed with React.js and SQL.
+      <article class="project-card" style="min-width: 280px; scroll-snap-align: start; background: rgba(255,255,255,0.08); border-radius: 16px; box-shadow: 0 6px 20px rgba(0,0,0,0.2); padding: 16px; transition: transform 0.3s ease; flex-shrink: 0; display: flex; flex-direction: column; justify-content: space-between;">
+        <h3 style="font-size: 1.3rem; color: #fff; margin-bottom: 10px;">Beyond CAPTCHA</h3>
+        <img src="images/j1.png" alt="Beyond CAPTCHA" style="border-radius: 10px; width: 100%; height: 160px; object-fit: cover; margin-bottom: 12px;" />
+        <p style="color: #ddd; font-size: 0.9rem; margin-bottom: 12px;">
+          Replaces CAPTCHA using behavioral biometrics. Built with Python, React, TensorFlow.
         </p>
-        <a href="https://github.com/datta-thota/The-Inexpen-Pharma" target="_blank" class="btn secondary" role="button"><i class="fab fa-github"></i> View on GitHub</a>
+        <a href="https://github.com/datta-thota/Beyond-CAPTCHA" target="_blank" style="text-align: center; background: #000; color: #fff; padding: 8px 12px; border-radius: 8px; text-decoration: none;">🔗 GitHub</a>
       </article>
 
-      
+      <article class="project-card" style="min-width: 280px; scroll-snap-align: start; background: rgba(255,255,255,0.08); border-radius: 16px; box-shadow: 0 6px 20px rgba(0,0,0,0.2); padding: 16px; transition: transform 0.3s ease; flex-shrink: 0; display: flex; flex-direction: column; justify-content: space-between;">
+        <h3 style="font-size: 1.3rem; color: #fff; margin-bottom: 10px;">The Inexpen Pharma</h3>
+        <img src="images/inexp.png" alt="Inexpen Pharma" style="border-radius: 10px; width: 100%; height: 160px; object-fit: cover; margin-bottom: 12px;" />
+        <p style="color: #ddd; font-size: 0.9rem; margin-bottom: 12px;">
+          Affordable pharmacy e-commerce built with React.js and SQL. Designed in Figma.
+        </p>
+        <a href="https://github.com/datta-thota/The-Inexpen-Pharma" target="_blank" style="text-align: center; background: #000; color: #fff; padding: 8px 12px; border-radius: 8px; text-decoration: none;">🔗 GitHub</a>
+      </article>
+
+      <!-- Duplicate & Extend as needed -->
+      <!-- Just copy another <article> to add more projects -->
 
     </div>
   </div>
 </section>
+
+
 <br>
 <br>
-<!-- UI/UX Design Portfolio -->
-<section id="uiux" class="glass-section light">
-  <div class="container">
-    <h2>UI/UX Design Work</h2>
-    <p class="section-intro">Here are some of my best UI designs showcasing clean layouts, user-centered thinking, and aesthetic interfaces.</p>
+<section id="uiux" class="glass-section light" style="padding: 40px 20px; background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(8px); border-radius: 16px;">
+  <div class="container" style="max-width: 1000px; margin: 0 auto;">
+    <h2 style="font-size: 2rem; text-align: center; margin-bottom: 10px;">UI/UX Design Work</h2>
+    <p style="text-align: center; margin-bottom: 30px; font-size: 0.95rem; color: #ddd;">
+      A showcase of some minimal and functional UI/UX designs I've worked on.
+    </p>
 
-    <!-- Highlighted Project 1 -->
-    <div class="project-block highlighted-project">
-      <h3 class="highlighted-title">🌟 NoteForge </h3>
-      <p class="project-description">
-NoteForge is a student-powered platform built with one goal in mind:
+    <style>
+      .scroll-slider::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
 
-To let students upload notes for fellow students.
-
-Whether it's lecture notes, assignments, or revision material — NoteForge makes it easy to share and access study resources by topic, subject, semester, and college.      </p>
-      <div class="design-grid">
-        <div class="design-card">
-          <img src="images/1.jpg" alt="UIDAI homepage with accessibility options" class="popupTrigger" />
-          <p>Landing page with Get started Option</p>
-        </div>
-        <div class="design-card">
-          <img src="images/2.jpg" alt="Behavior-based authentication UI" class="popupTrigger" />
-          <p>Login page</p>
-        </div>
-        <div class="design-card">
-          <img src="images/3.jpg" alt="UIDAI login dashboard" class="popupTrigger" />
-          <p>Sign up page</p>
-        </div>
-        <div class="design-card">
-          <img src="images/4.jpg" alt="UIDAI login dashboard" class="popupTrigger" />
-          <p>Home page with notes upload feature and all accessibility options</p>
-        </div>
-        <div class="design-card">
-          <img src="images/5.jpg" alt="UIDAI login dashboard" class="popupTrigger" />
-          <p>Notes upload dashboard</p>
-        </div>
-        <div class="design-card">
-          <img src="images/6.jpg" alt="UIDAI login dashboard" class="popupTrigger" />
-          <p>Attedence calculator tool</p>
-        </div>
-        <div class="design-card">
-          <img src="images/7.jpg" alt="UIDAI login dashboard" class="popupTrigger" />
-          <p>scientific calculator for students</p>
-        </div>
-        <div class="design-card">
-          <img src="images/8.jpg" alt="UIDAI login dashboard" class="popupTrigger" />
-          <p>Profile dashboard</p>
-        </div>
-      </div>
-      <div class="modal project-modal">
-    <span class="close">&times;</span>
-    <img class="modal-content" alt="Expanded Design Preview" />
-  </div>
-    </div>
-    
-    <!-- Highlighted Project 1 -->
-    <div class="project-block highlighted-project">
-      <h3 class="highlighted-title">🌟 UIDAI Website Login Page Redesign</h3>
-      <p class="project-description">
-        A complete revamp of the UIDAI login interface to improve user accessibility, modern aesthetics, and security perception.
+    <!-- Project Block Template -->
+    <div class="project-block" style="margin-bottom: 40px;">
+      <h3 style="font-size: 1.4rem; margin-bottom: 10px;">🌟 NoteForge</h3>
+      <p style="margin-bottom: 15px; font-size: 0.9rem; color: #ccc;">
+        A peer-to-peer note sharing system for students — upload, view, and manage study resources.
       </p>
-      <div class="design-grid">
-        <div class="design-card">
-          <img src="images/p1.png" alt="UIDAI homepage with accessibility options" class="popupTrigger" />
-          <p>Home page with Accessibility Options</p>
+      <div class="scroll-slider" style="display: flex; overflow-x: auto; gap: 12px; scroll-snap-type: x mandatory; padding-bottom: 8px;">
+        <div style="min-width: 160px; scroll-snap-align: start;">
+          <img src="images/1.jpg" style="width: 100%; border-radius: 8px;" />
+          <p style="font-size: 0.8rem; margin-top: 5px;">Landing Page</p>
         </div>
-        <div class="design-card">
-          <img src="images/p2.png" alt="Behavior-based authentication UI" class="popupTrigger" />
-          <p>Behavior-Based Authentication UI</p>
+        <div style="min-width: 160px; scroll-snap-align: start;">
+          <img src="images/2.jpg" style="width: 100%; border-radius: 8px;" />
+          <p style="font-size: 0.8rem; margin-top: 5px;">Login Page</p>
         </div>
-        <div class="design-card">
-          <img src="images/p3.png" alt="UIDAI login dashboard" class="popupTrigger" />
-          <p>Login Dashboard with Status Overview</p>
+        <div style="min-width: 160px; scroll-snap-align: start;">
+          <img src="images/3.jpg" style="width: 100%; border-radius: 8px;" />
+          <p style="font-size: 0.8rem; margin-top: 5px;">Signup Page</p>
+        </div>
+        <div style="min-width: 160px; scroll-snap-align: start;">
+          <img src="images/4.jpg" style="width: 100%; border-radius: 8px;" />
+          <p style="font-size: 0.8rem; margin-top: 5px;">Notes Dashboard</p>
         </div>
       </div>
-      <div class="modal project-modal">
-    <span class="close">&times;</span>
-    <img class="modal-content" alt="Expanded Design Preview" />
-  </div>
     </div>
 
-    <div class="project-block highlighted-project">
-  <h3 class="highlighted-title">🌟 IDEAL STATE (currently building)</h3>
-  <p class="project-description">
-    A satire on today’s social media platforms celebrating moments of doing absolutely nothing.
-  </p>
-  <div class="design-grid">
-    <div class="design-card">
-      <img src="images/d1.png" alt="Ideal State landing page" class="popupTrigger" />
-      <p>Landing page with Nothing</p>
+    <!-- UIDAI -->
+    <div class="project-block" style="margin-bottom: 40px;">
+      <h3 style="font-size: 1.4rem; margin-bottom: 10px;">🌟 UIDAI Redesign</h3>
+      <p style="margin-bottom: 15px; font-size: 0.9rem; color: #ccc;">
+        A minimal and accessible redesign of the UIDAI login interface.
+      </p>
+      <div class="scroll-slider" style="display: flex; overflow-x: auto; gap: 12px; scroll-snap-type: x mandatory; padding-bottom: 8px;">
+        <div style="min-width: 160px; scroll-snap-align: start;">
+          <img src="images/p1.png" style="width: 100%; border-radius: 8px;" />
+          <p style="font-size: 0.8rem; margin-top: 5px;">Accessible Home</p>
+        </div>
+        <div style="min-width: 160px; scroll-snap-align: start;">
+          <img src="images/p2.png" style="width: 100%; border-radius: 8px;" />
+          <p style="font-size: 0.8rem; margin-top: 5px;">Behavior Auth UI</p>
+        </div>
+        <div style="min-width: 160px; scroll-snap-align: start;">
+          <img src="images/p3.png" style="width: 100%; border-radius: 8px;" />
+          <p style="font-size: 0.8rem; margin-top: 5px;">Login Dashboard</p>
+        </div>
+      </div>
     </div>
-    <div class="design-card">
-      <img src="images/d2.png" alt="Ideal State login page" class="popupTrigger" />
-      <p>Login page</p>
-    </div>
-    <div class="design-card">
-      <img src="images/d3.png" alt="Ideal State home page" class="popupTrigger" />
-      <p>Home page (currently working)</p>
+
+    <!-- Ideal State -->
+    <div class="project-block" style="margin-bottom: 40px;">
+      <h3 style="font-size: 1.4rem; margin-bottom: 10px;">🌟 Ideal State (in progress)</h3>
+      <p style="margin-bottom: 15px; font-size: 0.9rem; color: #ccc;">
+        A satire platform celebrating... absolutely nothing. A minimal and ironic take on social media.
+      </p>
+      <div class="scroll-slider" style="display: flex; overflow-x: auto; gap: 12px; scroll-snap-type: x mandatory; padding-bottom: 8px;">
+        <div style="min-width: 160px; scroll-snap-align: start;">
+          <img src="images/d1.png" style="width: 100%; border-radius: 8px;" />
+          <p style="font-size: 0.8rem; margin-top: 5px;">Nothing Landing</p>
+        </div>
+        <div style="min-width: 160px; scroll-snap-align: start;">
+          <img src="images/d2.png" style="width: 100%; border-radius: 8px;" />
+          <p style="font-size: 0.8rem; margin-top: 5px;">Login Page</p>
+        </div>
+        <div style="min-width: 160px; scroll-snap-align: start;">
+          <img src="images/d3.png" style="width: 100%; border-radius: 8px;" />
+          <p style="font-size: 0.8rem; margin-top: 5px;">Home (WIP)</p>
+        </div>
+      </div>
     </div>
   </div>
-
-  <!-- Move the modal here inside the project block -->
-  <div class="modal project-modal">
-    <span class="close">&times;</span>
-    <img class="modal-content" alt="Expanded Design Preview" />
-  </div>
-</div>
-
 </section>
 
 <!-- Certifications -->
@@ -465,33 +576,104 @@ Whether it's lecture notes, assignments, or revision material — NoteForge make
 </section>
 <br>
 <br>
-<!-- Contact -->
-<section id="contact" class="glass-section">
-  <div class="container">
-    <h2>Let's Connect</h2>
-    <p style="text-align: center; margin-bottom: 2rem;">
-      I'm always open to discussing new opportunities, collaborations, or just a good tech chat.
+<section id="contact" class="glass-section" style="padding: 60px 16px; background: rgba(20, 20, 20, 0.85); border-radius: 16px;">
+  <div class="container" style="max-width: 800px; margin: auto; text-align: center;">
+    <h2 style="font-size: 3rem; font-family: 'Bebas Neue', sans-serif; color: #fff; margin-bottom: 20px; letter-spacing: 1px;">
+      Let's Connect
+    </h2>
+    <p style="color: #aaa; font-size: 1rem; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+      I'm always open to discussing new opportunities, collaborations,<br>or just a good tech chat 🖤
     </p>
-    
+
     <div class="social-icons">
-      <a href="https://www.linkedin.com/in/purushothama-datta/" target="_blank" class="btn secondary" role="button" aria-label="LinkedIn">
+      <a href="https://www.linkedin.com/in/purushothama-datta/" target="_blank" class="connect-button">
         <img src="images/icons/linkedin.png" alt="LinkedIn" />
         <span>LinkedIn</span>
       </a>
-      <a href="https://github.com/datta-thota" target="_blank" class="btn secondary" role="button" aria-label="GitHub">
+      <a href="https://github.com/datta-thota" target="_blank" class="connect-button">
         <img src="images/icons/github-sign.png" alt="GitHub" />
         <span>GitHub</span>
       </a>
-      <a href="mailto:purushothama.datta@example.com" class="btn secondary" role="button" aria-label="Email">
+      <a href="mailto:purushothama.datta@example.com" class="connect-button">
         <img src="images/icons/gmail.png" alt="Email" />
         <span>Email</span>
       </a>
-      <a href="https://www.instagram.com/the_datta_01/" class="btn secondary" role="button" aria-label="Instagram">
+      <a href="https://www.instagram.com/the_datta_01/" target="_blank" class="connect-button">
         <img src="images/icons/instagram.png" alt="Instagram" />
         <span>Instagram</span>
       </a>
     </div>
   </div>
+
+  <style>
+    .social-icons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .connect-button {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 14px 24px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #f0f0f0;
+      font-weight: 500;
+      text-decoration: none;
+      font-size: 1rem;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.04);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .connect-button img {
+      width: 24px;
+      height: 24px;
+      filter: grayscale(100%) brightness(1.2);
+      transition: transform 0.3s ease;
+    }
+
+    .connect-button::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 16px;
+      background: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .connect-button:hover::before {
+      opacity: 1;
+    }
+
+    .connect-button:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(255, 255, 255, 0.08);
+    }
+
+    .connect-button:hover img {
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 600px) {
+      .connect-button {
+        padding: 12px 18px;
+        font-size: 0.95rem;
+      }
+
+      .connect-button img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  </style>
 </section>
 
 
@@ -567,6 +749,20 @@ Whether it's lecture notes, assignments, or revision material — NoteForge make
     }
   });
 });
+
+const nav = document.getElementById('dynamicNav');
+
+  function expandNav() {
+    nav.style.transform = 'translateX(-50%) scale(1.05)';
+    nav.style.boxShadow = '0 12px 28px rgba(0,0,0,0.35)';
+    nav.style.backgroundColor = 'rgba(0, 0, 0, 0.45)';
+  }
+
+  function shrinkNav() {
+    nav.style.transform = 'translateX(-50%) scale(1)';
+    nav.style.boxShadow = '0 8px 24px rgba(0,0,0,0.25)';
+    nav.style.backgroundColor = 'rgba(0, 0, 0, 0.3)';
+  }
 
 </script>
 
