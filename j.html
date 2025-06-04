@@ -132,11 +132,14 @@
     font-size: 15vw;
     -webkit-text-stroke: 0.8px rgb(0, 0, 0);
     letter-spacing: 0.02em;
+    margin-top: -13vh;
   }
 
   .name {
     font-size: 14vw;
     bottom: 20%;
+    font-family: 'Great Vibes', cursive;
+
   }
 
   .photo {
@@ -186,6 +189,15 @@ font-family: 'Archivo Black', sans-serif;
     color: #ff0000;
     font-style: italic;
   }
+  .bg-top {
+      background: #ffe6e6; /* dark shade */
+    }
+    .bg-middle {
+      background: #cdefff; /* strong electric blue */
+    }
+    .bg-bottom {
+      background: #ffeabf; /* deep pink */
+    }
 }
 
 @keyframes fadeInQuote {
@@ -198,6 +210,32 @@ font-family: 'Archivo Black', sans-serif;
     transform: translateY(0) translateX(-50%);
   }
 }
+
+.mobile-note {
+  display: none;
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  color: #ccc;
+  padding: 6px 14px;
+  font-size: 3.5vw;
+  border-radius: 12px;
+  z-index: 999;
+  font-family: 'Archivo Black', sans-serif;
+  text-align: center;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-note {
+    display: block;
+  }
+}
+
+
 
 
   </style>
@@ -231,6 +269,10 @@ font-family: 'Archivo Black', sans-serif;
     <div class="name">Datta Thota</div>
     <img src="dp1.png" alt="Profile" class="photo" />
   </div>
+  <div class="mobile-note">
+Best experienced on desktop</div>
+
+
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script>
