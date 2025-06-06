@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Going Home Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0f0f0f;
+      color: #eaeaea;
+      overflow-x: hidden;
+    }
+
+    .hero {
+      height: 100vh;
+      background: linear-gradient(rgba(20, 20, 30, 0.6), rgba(10, 10, 10, 0.8)),
+        url('moon.jpg') no-repeat center center/cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      color: #ffffff;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #ccc;
+      max-width: 500px;
+    }
+
+    .section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .project {
+      margin-bottom: 60px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+
+    .project.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .project h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+      color: #f7c59f;
+    }
+
+    .project p {
+      font-size: 1rem;
+      color: #bbb;
+      margin-bottom: 16px;
+    }
+
+    .gallery {
+      display: flex;
+      overflow-x: auto;
+      gap: 14px;
+      padding-bottom: 10px;
+      scroll-snap-type: x mandatory;
+    }
+
+    .gallery::-webkit-scrollbar {
+      display: none;
+    }
+
+    .gallery img {
+      flex: 0 0 auto;
+      width: 85%;
+      max-width: 300px;
+      border-radius: 12px;
+      scroll-snap-align: start;
+      transition: transform 0.4s ease;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.4rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .project h2 {
+        font-size: 1.4rem;
+      }
+
+      .gallery img {
+        width: 90%;
+        max-width: 250px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 0.95rem;
+      }
+
+      .project h2 {
+        font-size: 1.2rem;
+      }
+
+      footer {
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+<section class="hero" style="text-align: center; padding: 100px 20px; position: relative;">
+  <h1 style="font-size: 3rem; margin-bottom: 10px;">DESIGNING IMPACT</h1>
+  <p style="font-size: 1.2rem; color: #ccc;">From rough sketches to refined screens – shaping human-centered digital experiences.</p>
+
+  <!-- Scroll Down Note -->
+  <div style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); font-size: 0.9rem; color: #aaa; animation: bounce 2s infinite;">
+    ↓ Scroll Down
+  </div>
+
+  <!-- Inline Keyframes for Animation -->
+  <style>
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateX(-50%) translateY(0);
+      }
+      50% {
+        transform: translateX(-50%) translateY(8px);
+      }
+    }
+  </style>
+</section>
+
+
+
+  <section id="uiux" class="glass-section light" style="padding: 40px 20px; background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(8px); border-radius: 16px;"> 
+  <div class="container" style="max-width: 1000px; margin: 0 auto;">
+    <h2 style="font-size: 2rem; text-align: center; margin-bottom: 10px;">UI/UX Design Work</h2>
+    <p style="text-align: center; margin-bottom: 30px; font-size: 0.95rem; color: #ddd;">
+      A collection of thoughtfully designed UI/UX interfaces and digital screens.
+    </p>
+
+    <style>
+      .scroll-slider::-webkit-scrollbar {
+        display: none;
+      }
+      /* Smooth scrolling on all browsers */
+      .scroll-slider {
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
+      }
+    </style>
+
+    <!-- NoteForge Project -->
+    <div class="project-block" style="margin-bottom: 40px;">
+      <h3 style="font-size: 1.4rem; margin-bottom: 10px;">🌟 NoteForge</h3>
+      <p style="margin-bottom: 15px; font-size: 0.9rem; color: #ccc;">
+        A peer-to-peer note sharing system for students — upload, view, and manage study resources.
+      </p>
+      <div class="scroll-slider" style="display: flex; overflow-x: auto; gap: 12px; scroll-snap-type: x mandatory; padding-bottom: 8px;">
+        <div style="min-width: 160px; scroll-snap-align: start;">
+          <img class="popup-img" src="images/1.jpg" style="width: 100%; border-radius: 8px;" alt="NoteForge Landing Page" />
+          <p style="font-size: 0.8rem; margin-top: 5px;">Landing Page</p>
+        </div>
+        <div style="min-width: 160px; scroll-snap-align: start;">
+          <img class="popup-img" src="images/2.jpg" style="width: 100%; border-radius: 8px;" alt="NoteForge Login Page" />
+          <p style="font-size: 0.8rem; margin-top: 5px;">Login Page</p>
+        </div>
+        <div style="min-width: 160px; scroll-snap-align: start;">
+          <img class="popup-img" src="images/3.jpg" style="width: 100%; border-radius: 8px;" alt="NoteForge Signup Page" />
+          <p style="font-size: 0.8rem; margin-top: 5px;">Signup Page</p>
+        </div>
+        <div style="min-width: 160px; scroll-snap-align: start;">
+          <img class="popup-img" src="images/4.jpg" style="width: 100%; border-radius: 8px;" alt="NoteForge Dashboard" />
+          <p style="font-size: 0.8rem; margin-top: 5px;">Notes Dashboard</p>
+        </div>
+        <div style="min-width: 160px; scroll-snap-align: start;">
+          <img class="popup-img" src="images/5.jpg" style="width: 100%; border-radius: 8px;" alt="NoteForge Dashboard" />
+          <p style="font-size: 0.8rem; margin-top: 5px;"> Upload Notes Page</p>
+        </div>
+        <div style="min-width: 160px; scroll-snap-align: start;">
+          <img class="popup-img" src="images/6.jpg" style="width: 100%; border-radius: 8px;" alt="NoteForge Dashboard" />
+          <p style="font-size: 0.8rem; margin-top: 5px;">Attendence calculator</p>
+        </div>
+        <div style="min-width: 160px; scroll-snap-align: start;">
+          <img class="popup-img" src="images/7.jpg" style="width: 100%; border-radius: 8px;" alt="NoteForge Dashboard" />
+          <p style="font-size: 0.8rem; margin-top: 5px;">Scientific calculator</p>
+        </div>
+        <div style="min-width: 160px; scroll-snap-align: start;">
+          <img class="popup-img" src="images/8.jpg" style="width: 100%; border-radius: 8px;" alt="NoteForge Dashboard" />
+          <p style="font-size: 0.8rem; margin-top: 5px;">Profile Dashboard</p>
+        </div>
+      </div>
+      <p style="text-align: center; color: #ccc; font-size: 0.9rem; margin-bottom: 16px; font-style: italic;">
+        ← Slide to view screens of the project →
+      </p>
+    </div>
+
+    <!-- UIDAI Redesign Project -->
+    <div class="project-block" style="margin-bottom: 40px;">
+      <h3 style="font-size: 1.4rem; margin-bottom: 10px;">🌟 UIDAI Redesign</h3>
+      <p style="margin-bottom: 15px; font-size: 0.9rem; color: #ccc;">
+        A minimal and accessible redesign of the UIDAI login interface.
+      </p>
+      <div class="scroll-slider" style="display: flex; overflow-x: auto; gap: 12px; scroll-snap-type: x mandatory; padding-bottom: 8px;">
+        <div style="min-width: 160px; scroll-snap-align: start;">
+          <img class="popup-img" src="images/p1.png" style="width: 100%; border-radius: 8px;" alt="UIDAI Accessible Home" />
+          <p style="font-size: 0.8rem; margin-top: 5px;">Accessible Home</p>
+        </div>
+        <div style="min-width: 160px; scroll-snap-align: start;">
+          <img class="popup-img" src="images/p2.png" style="width: 100%; border-radius: 8px;" alt="UIDAI Behavior Auth UI" />
+          <p style="font-size: 0.8rem; margin-top: 5px;">Behavior Auth UI</p>
+        </div>
+        <div style="min-width: 160px; scroll-snap-align: start;">
+          <img class="popup-img" src="images/p3.png" style="width: 100%; border-radius: 8px;" alt="UIDAI Login Dashboard" />
+          <p style="font-size: 0.8rem; margin-top: 5px;">Login Dashboard</p>
+        </div>
+      </div>
+      <p style="text-align: center; color: #ccc; font-size: 0.9rem; margin-bottom: 16px; font-style: italic;">
+        ← Slide to view screens of the project →
+      </p>
+    </div>
+
+    <!-- Ideal State Project -->
+    <div class="project-block" style="margin-bottom: 40px;">
+      <h3 style="font-size: 1.4rem; margin-bottom: 10px;">🌟 Ideal State (in progress)</h3>
+      <p style="margin-bottom: 15px; font-size: 0.9rem; color: #ccc;">
+        A satire platform celebrating... absolutely nothing. A minimal and ironic take on social media.
+      </p>
+      <div class="scroll-slider" style="display: flex; overflow-x: auto; gap: 12px; scroll-snap-type: x mandatory; padding-bottom: 8px;">
+        <div style="min-width: 160px; scroll-snap-align: start;">
+          <img class="popup-img" src="images/d1.png" style="width: 100%; border-radius: 8px;" alt="Ideal State Nothing Landing" />
+          <p style="font-size: 0.8rem; margin-top: 5px;">Nothing Landing</p>
+        </div>
+        <div style="min-width: 160px; scroll-snap-align: start;">
+          <img class="popup-img"  src="images/d2.png" style="width: 100%; border-radius: 8px;" alt="Ideal State Login Page" />
+          <p style="font-size: 0.8rem; margin-top: 5px;">Login Page</p>
+        </div>
+        <div style="min-width: 160px; scroll-snap-align: start;">
+          <img class="popup-img" src="images/d3.png" style="width: 100%; border-radius: 8px;" alt="Ideal State Home (WIP)" />
+          <p style="font-size: 0.8rem; margin-top: 5px;">Home (WIP)</p>
+        </div>
+      </div>
+      <p style="text-align: center; color: #ccc; font-size: 0.9rem; margin-bottom: 16px; font-style: italic;">
+        ← Slide to view screens of the project →
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section id="canva" class="glass-section light" style="padding: 40px 20px; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(6px); border-radius: 16px; margin-top: 40px;">
+  <div class="container" style="max-width: 1000px; margin: 0 auto;">
+    <h2 style="font-size: 2rem; text-align: center; margin-bottom: 10px;">Canva Creations</h2>
+    <p style="text-align: center; margin-bottom: 30px; font-size: 0.95rem; color: #ddd;">
+      Posters, social posts, banners, and creative visual compositions designed with Canva.
+    </p>
+
+    <div class="project project-block">
+      <h3 style="font-size: 1.4rem; margin-bottom: 10px;">✨ Highlights</h3>
+      <p style="margin-bottom: 15px; font-size: 0.9rem; color: #ccc;">
+        A glance at some of my favorite Canva creations — crafted to communicate with visual clarity.
+      </p>
+
+      <div class="scroll-slider" style="display: flex; overflow-x: auto; gap: 12px; scroll-snap-type: x mandatory; padding-bottom: 8px;">
+        <!-- Each image has class="popup-img" for modal trigger -->
+        <div style="min-width: 160px; scroll-snap-align: start;">
+          <img class="popup-img" src="51.png" style="width: 100%; border-radius: 8px;" alt="Canva Poster 1" />
+          <p style="font-size: 0.8rem; margin-top: 5px;">Invitation Design</p>
+        </div>
+        <div style="min-width: 160px; scroll-snap-align: start;">
+          <img class="popup-img" src="52.png" style="width: 100%; border-radius: 8px;" alt="Canva Poster 2" />
+          <p style="font-size: 0.8rem; margin-top: 5px;">Poster Design</p>
+        </div>
+        <div style="min-width: 160px; scroll-snap-align: start;">
+          <img class="popup-img" src="53.png" style="width: 100%; border-radius: 8px;" alt="Canva Poster 3" />
+          <p style="font-size: 0.8rem; margin-top: 5px;">Poster Design</p>
+        </div>
+        <div style="min-width: 160px; scroll-snap-align: start;">
+          <img class="popup-img" src="54.png" style="width: 100%; border-radius: 8px;" alt="Certificate" />
+          <p style="font-size: 0.8rem; margin-top: 5px;">Certificate Design</p>
+        </div>
+        <div style="min-width: 160px; scroll-snap-align: start;">
+          <img class="popup-img" src="55.png" style="width: 100%; border-radius: 8px;" alt="Certificate 2" />
+          <p style="font-size: 0.8rem; margin-top: 5px;">Certificate Design</p>
+        </div>
+        <div style="min-width: 160px; scroll-snap-align: start;">
+          <img class="popup-img" src="56.png" style="width: 100%; border-radius: 8px;" alt="Invitation 2" />
+          <p style="font-size: 0.8rem; margin-top: 5px;">Invitation Design</p>
+        </div>
+        <div style="min-width: 160px; scroll-snap-align: start;">
+          <img class="popup-img" src="57.png" style="width: 100%; border-radius: 8px;" alt="Unique Design" />
+          <p style="font-size: 0.8rem; margin-top: 5px;">Unique Design</p>
+        </div>
+        <div style="min-width: 160px; scroll-snap-align: start;">
+          <img class="popup-img" src="58.png" style="width: 100%; border-radius: 8px;" alt="Publicity Design" />
+          <p style="font-size: 0.8rem; margin-top: 5px;">Publicity Design</p>
+        </div>
+        <div style="min-width: 160px; scroll-snap-align: start;">
+          <img class="popup-img" src="59.png" style="width: 100%; border-radius: 8px;" alt="Countdown Design" />
+          <p style="font-size: 0.8rem; margin-top: 5px;">Countdown Design</p>
+        </div>
+        <div style="min-width: 160px; scroll-snap-align: start;">
+          <img class="popup-img" src="60.png" style="width: 100%; border-radius: 8px;" alt="Poster 4" />
+          <p style="font-size: 0.8rem; margin-top: 5px;">Poster Design</p>
+        </div>
+        <div style="min-width: 160px; scroll-snap-align: start;">
+          <img class="popup-img" src="61.png" style="width: 100%; border-radius: 8px;" alt="Poster 5" />
+          <p style="font-size: 0.8rem; margin-top: 5px;">Poster Design</p>
+        </div>
+        <div style="min-width: 160px; scroll-snap-align: start;">
+          <img class="popup-img" src="62.png" style="width: 100%; border-radius: 8px;" alt="Invitation 3" />
+          <p style="font-size: 0.8rem; margin-top: 5px;">Invitation</p>
+        </div>
+      </div>
+
+      <p style="text-align: center; color: #ccc; font-size: 0.9rem; margin-bottom: 16px; font-style: italic;">
+        ← Swipe through my Canva creations →
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- MODAL LIGHTBOX -->
+<div id="imageModal" style="position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(0,0,0,0.8); display: none; align-items: center; justify-content: center; z-index: 9999;">
+  <img id="modalImage" src="" alt="Expanded View" style="max-width: 90vw; max-height: 85vh; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.5); transition: all 0.3s ease-in-out;" />
+</div>
+
+<!-- SMOOTH FADE-IN -->
+<style>
+  #imageModal {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.96); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+</style>
+
+<!-- MODAL SCRIPT -->
+<script>
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImage");
+
+  document.querySelectorAll(".popup-img").forEach(img => {
+    img.addEventListener("click", () => {
+      modalImg.src = img.src;
+      modal.style.display = "flex";
+      document.body.style.overflow = "hidden";
+    });
+  });
+
+  modal.addEventListener("click", () => {
+    modal.style.display = "none";
+    modalImg.src = "";
+    document.body.style.overflow = "auto";
+  });
+</script>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 — Designed by Purushothama Datta Thota</p>
+  </footer>
+
+  <!-- SCROLL ANIMATION -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.project').forEach(project => {
+      observer.observe(project);
+    });
+  </script>
+</body>
+</html>

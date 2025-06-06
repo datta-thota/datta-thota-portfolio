@@ -129,21 +129,26 @@
 
 @media (max-width: 480px) {
   .title {
-    font-size: 15vw;
+    font-size: 13vw;
     -webkit-text-stroke: 0.8px rgb(0, 0, 0);
     letter-spacing: 0.02em;
-    margin-top: -13vh;
+    margin-top: -8vh;
+      line-height: 1;
+
   }
 
   .name {
     font-size: 14vw;
-    bottom: 20%;
+    bottom: 16%;
+    transform: translate(-50%, 0);
     font-family: 'Great Vibes', cursive;
 
   }
 
   .photo {
-    height: 60vh;
+    height: 50vh;
+    bottom: 0;
+    
   }
 
   .scrolling-inner {
@@ -167,26 +172,32 @@
 
 /* Show only on mobile screens */
 @media (max-width: 480px) {
+  body {
+  padding-bottom: 60px; /* adds room below */
+}
+
   .hero-quote {
     display: block;
-font-family: 'Archivo Black', sans-serif;
-    font-size: clamp(20px, 6vw, 36px);
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 6vw;
     font-weight: 700;
     color: #111;
     text-align: left;
     margin-top: 2rem;
     padding: 0 16px;
-    z-index: 100;
+    z-index: 999;
     position: absolute;
-    top: 70px;
+    top: 90px;
     left: 50%;
     transform: translateX(-50%);
     opacity: 0;
     animation: fadeInQuote 1.2s ease-out 0.3s forwards;
+    line-height: -0.9;
+
   }
 
   .hero-quote span {
-    color: #ff0000;
+    color: #ff003c;
     font-style: italic;
   }
   .bg-top {
@@ -269,8 +280,7 @@ font-family: 'Archivo Black', sans-serif;
     <div class="name">Datta Thota</div>
     <img src="dp1.png" alt="Profile" class="photo" />
   </div>
-  <div class="mobile-note">
-Best experienced on desktop</div>
+  
 
 
 

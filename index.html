@@ -289,36 +289,115 @@
 <br>
 <!-- About -->
 <!-- About -->
-<section id="about" class="glass-section" style="padding: 80px 20px; background: rgba(20, 20, 20, 0.9); border-radius: 20px; color: #eaeaea;">
-  <div class="container" style="max-width: 1100px; margin: auto; display: flex; flex-wrap: wrap; align-items: center; gap: 40px;">
+<section id="about" style="padding: 80px 20px; background: linear-gradient(135deg, #0f0f0f, #1a1a1a); border-radius: 24px; color: #eaeaea; font-family: 'Inter', sans-serif; overflow: hidden;">
+  <style>
+    #about .about-container {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 40px;
+    }
 
+    .profile-img {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      border: 4px solid rgba(255,255,255,0.1);
+      object-fit: cover;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+      filter: brightness(1.1);
+      transition: transform 0.4s ease;
+    }
+
+    .profile-img:hover {
+      transform: scale(1.05) rotate(-1deg);
+    }
+
+    .about-text h2 {
+      font-size: 2.6rem;
+      color: #fff;
+      margin-bottom: 20px;
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: 1px;
+    }
+
+    .about-text p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 25px;
+      color: #ccc;
+    }
+
+    .about-text p strong {
+      color: #fff;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      padding: 6px 14px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 999px;
+      font-size: 0.85rem;
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: inset 0 0 6px rgba(255,255,255,0.05);
+      transition: background 0.3s ease;
+    }
+
+    .tag:hover {
+      background: rgba(255,255,255,0.12);
+    }
+
+    @media (max-width: 768px) {
+      .profile-img {
+        width: 200px;
+        height: 200px;
+      }
+
+      .about-text h2 {
+        font-size: 2rem;
+      }
+
+      .about-text p {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+
+  <div class="about-container">
     <!-- Profile Image -->
-    <div style="flex: 1; min-width: 280px; display: flex; justify-content: center;">
-      <img src="Datta.jpg" alt="Purushothama Datta Thota"
-           style="width: 280px; height: 280px; object-fit: cover; border-radius: 50%; border: 3px solid rgba(255,255,255,0.1); filter: grayscale(100%) brightness(1.1); box-shadow: 0 10px 30px rgba(0,0,0,0.4);">
+    <div style="flex: 1; min-width: 260px; display: flex; justify-content: center;">
+      <img src="Datta.jpg" alt="Purushothama Datta Thota" class="profile-img" />
     </div>
 
-    <!-- Story-Driven Text -->
-    <div style="flex: 2; min-width: 300px;">
-      <h2 style="font-size: 2.5rem; color: white; margin-bottom: 15px;">Who is Datta?</h2>
+    <!-- Story + Tags -->
+    <div class="about-text" style="flex: 2; min-width: 300px;">
+      <h2>So, who’s Datta?</h2>
 
-      <p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 25px;">
-        I’m a <strong style="color: #fff;">developer who designs</strong> and a <strong style="color: #fff;">designer who codes</strong>.
-        I bring ideas to life with code and creativity. Whether it's an elegant UI, a clever ML model, or an expressive story in pixels — I’m always creating.
+      <p>
+        A <strong>developer who designs</strong> and a <strong>designer who codes</strong>.<br />
+        From bold interfaces to backend logic, I turn raw ideas into expressive digital experiences. Whether it’s a clean UI, an ML model, or a moment in pixels — I’m all in.
       </p>
 
-      <!-- Keywords / Tags -->
-      <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 25px;">
-        <span style="padding: 6px 14px; background: rgba(255,255,255,0.05); border-radius: 999px; font-size: 0.85rem;">🎨 UI/UX Designer</span>
-        <span style="padding: 6px 14px; background: rgba(255,255,255,0.05); border-radius: 999px; font-size: 0.85rem;">💻 Full Stack Dev</span>
-        <span style="padding: 6px 14px; background: rgba(255,255,255,0.05); border-radius: 999px; font-size: 0.85rem;">📊 Data Science</span>
-<span style="padding: 6px 14px; background: rgba(255,255,255,0.05); border-radius: 999px; font-size: 0.85rem;">📍 Andhra Pradesh, India</span>
-        <span style="padding: 6px 14px; background: rgba(255,255,255,0.05); border-radius: 999px; font-size: 0.85rem;">🎓 B.Tech IT @ SRGEC</span>
-        <span style="padding: 6px 14px; background: rgba(255,255,255,0.05); border-radius: 999px; font-size: 0.85rem;">🧠 ACM Chair</span>
+      <div class="tags">
+        <span class="tag">🎨 UI/UX Designer</span>
+        <span class="tag">💻 Full Stack Dev</span>
+        <span class="tag">📊 Data Science</span>
+        <span class="tag">📍 Andhra Pradesh, India</span>
+        <span class="tag">🎓 B.Tech IT @ SRGEC</span>
+        <span class="tag">🧠 ACM Chair</span>
       </div>
     </div>
   </div>
 </section>
+
 
 
 
@@ -363,180 +442,208 @@
 </section>
 <br>
 <br>
-<section id="projects" class="glass-section" style="padding: 60px 20px; background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border-radius: 20px; overflow: hidden;">
-  <div class="container" style="max-width: 1200px; margin: auto;">
-    <h2 style="font-size: 2.8rem; text-align: center; margin-bottom: 40px; font-family: 'Bebas Neue', sans-serif; color: #fff; letter-spacing: 1px;">
-      Featured Projects
-    </h2>
+<section id="projects" style="padding: 60px 20px; background: #0f0f0f; border-radius: 20px;">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
-    <div class="project-slider" style="display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 10px; scrollbar-width: none; -ms-overflow-style: none;">
-      <style>
-        .project-slider::-webkit-scrollbar {
-          display: none;
-        }
-        .project-card:hover {
-          transform: scale(1.02);
-        }
+    .projects-wrapper {
+      max-width: 960px;
+      margin: auto;
+    }
 
-        @media (max-width: 600px) {
-          .project-card {
-            min-width: 240px !important;
-            padding: 12px !important;
-          }
+    .projects-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.8rem;
+      color: white;
+      text-align: center;
+      margin-bottom: 40px;
+      letter-spacing: 1px;
+    }
 
-          .project-card img {
-            height: 140px !important;
-          }
+    .project-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+      overflow: hidden;
+      margin-bottom: 30px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-          .project-card h3 {
-            font-size: 1.1rem !important;
-          }
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+    }
 
-          .project-card p {
-            font-size: 0.85rem !important;
-          }
+    .project-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
 
-          .project-card a {
-            font-size: 0.85rem !important;
-            padding: 6px 10px !important;
-          }
-        }
-      </style>
+    .project-content {
+      padding: 20px;
+    }
 
-      <!-- CARD TEMPLATE -->
-      <article class="project-card" style="min-width: 280px; scroll-snap-align: start; background: rgba(255,255,255,0.08); border-radius: 16px; box-shadow: 0 6px 20px rgba(0,0,0,0.2); padding: 16px; transition: transform 0.3s ease; flex-shrink: 0; display: flex; flex-direction: column; justify-content: space-between;">
-        <h3 style="font-size: 1.3rem; color: #fff; margin-bottom: 10px;">NoteForge</h3>
-        <img src="images/NoteForge.png" alt="NoteForge" style="border-radius: 10px; width: 100%; height: 160px; object-fit: cover; margin-bottom: 12px;" />
-        <p style="color: #ddd; font-size: 0.9rem; margin-bottom: 12px;">
-          A note-sharing platform built with React Native, Express.js, MongoDB, and Cloudinary.
-        </p>
-        <a href="https://github.com/datta-thota/NoteForge" target="_blank" style="text-align: center; background: #000; color: #fff; padding: 8px 12px; border-radius: 8px; text-decoration: none;">🔗 GitHub</a>
-      </article>
+    .project-content h3 {
+      color: #fff;
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
 
-      <article class="project-card" style="min-width: 280px; scroll-snap-align: start; background: rgba(255,255,255,0.08); border-radius: 16px; box-shadow: 0 6px 20px rgba(0,0,0,0.2); padding: 16px; transition: transform 0.3s ease; flex-shrink: 0; display: flex; flex-direction: column; justify-content: space-between;">
-        <h3 style="font-size: 1.3rem; color: #fff; margin-bottom: 10px;">Beyond CAPTCHA</h3>
-        <img src="images/j1.png" alt="Beyond CAPTCHA" style="border-radius: 10px; width: 100%; height: 160px; object-fit: cover; margin-bottom: 12px;" />
-        <p style="color: #ddd; font-size: 0.9rem; margin-bottom: 12px;">
-          Replaces CAPTCHA using behavioral biometrics. Built with Python, React, TensorFlow.
-        </p>
-        <a href="https://github.com/datta-thota/Beyond-CAPTCHA" target="_blank" style="text-align: center; background: #000; color: #fff; padding: 8px 12px; border-radius: 8px; text-decoration: none;">🔗 GitHub</a>
-      </article>
+    .project-content p {
+      color: #ccc;
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+      line-height: 1.4;
+    }
 
-      <article class="project-card" style="min-width: 280px; scroll-snap-align: start; background: rgba(255,255,255,0.08); border-radius: 16px; box-shadow: 0 6px 20px rgba(0,0,0,0.2); padding: 16px; transition: transform 0.3s ease; flex-shrink: 0; display: flex; flex-direction: column; justify-content: space-between;">
-        <h3 style="font-size: 1.3rem; color: #fff; margin-bottom: 10px;">The Inexpen Pharma</h3>
-        <img src="images/inexp.png" alt="Inexpen Pharma" style="border-radius: 10px; width: 100%; height: 160px; object-fit: cover; margin-bottom: 12px;" />
-        <p style="color: #ddd; font-size: 0.9rem; margin-bottom: 12px;">
-          Affordable pharmacy e-commerce built with React.js and SQL. Designed in Figma.
-        </p>
-        <a href="https://github.com/datta-thota/The-Inexpen-Pharma" target="_blank" style="text-align: center; background: #000; color: #fff; padding: 8px 12px; border-radius: 8px; text-decoration: none;">🔗 GitHub</a>
-      </article>
+    .project-content a {
+      background: #fff;
+      color: #000;
+      text-decoration: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      display: inline-block;
+      transition: background 0.3s;
+    }
 
-      <!-- Duplicate & Extend as needed -->
-      <!-- Just copy another <article> to add more projects -->
+    .project-content a:hover {
+      background: #ffef00;
+    }
 
-    </div>
-     <p style="text-align: center; color: #ccc; font-size: 0.9rem; margin-bottom: 16px; font-style: italic;">
-      ← Slide to view more projects →
-    </p>
-  </div>
-</section>
-
-
-<br>
-<br>
-<section id="uiux" class="glass-section light" style="padding: 40px 20px; background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(8px); border-radius: 16px;">
-  <div class="container" style="max-width: 1000px; margin: 0 auto;">
-    <h2 style="font-size: 2rem; text-align: center; margin-bottom: 10px;">UI/UX Design Work</h2>
-    <p style="text-align: center; margin-bottom: 30px; font-size: 0.95rem; color: #ddd;">
-      A showcase of some minimal and functional UI/UX designs I've worked on.
-    </p>
-
-    <style>
-      .scroll-slider::-webkit-scrollbar {
-        display: none;
+    @media (min-width: 768px) {
+      .project-card {
+        flex-direction: row;
+        height: 240px;
       }
-    </style>
 
-    <!-- Project Block Template -->
-    <div class="project-block" style="margin-bottom: 40px;">
-      <h3 style="font-size: 1.4rem; margin-bottom: 10px;">🌟 NoteForge</h3>
-      <p style="margin-bottom: 15px; font-size: 0.9rem; color: #ccc;">
-        A peer-to-peer note sharing system for students — upload, view, and manage study resources.
-      </p>
-      <div class="scroll-slider" style="display: flex; overflow-x: auto; gap: 12px; scroll-snap-type: x mandatory; padding-bottom: 8px;">
-        <div style="min-width: 160px; scroll-snap-align: start;">
-          <img src="images/1.jpg" style="width: 100%; border-radius: 8px;" />
-          <p style="font-size: 0.8rem; margin-top: 5px;">Landing Page</p>
-        </div>
-        <div style="min-width: 160px; scroll-snap-align: start;">
-          <img src="images/2.jpg" style="width: 100%; border-radius: 8px;" />
-          <p style="font-size: 0.8rem; margin-top: 5px;">Login Page</p>
-        </div>
-        <div style="min-width: 160px; scroll-snap-align: start;">
-          <img src="images/3.jpg" style="width: 100%; border-radius: 8px;" />
-          <p style="font-size: 0.8rem; margin-top: 5px;">Signup Page</p>
-        </div>
-        <div style="min-width: 160px; scroll-snap-align: start;">
-          <img src="images/4.jpg" style="width: 100%; border-radius: 8px;" />
-          <p style="font-size: 0.8rem; margin-top: 5px;">Notes Dashboard</p>
-        </div>
+      .project-card img {
+        width: 40%;
+        height: 100%;
+      }
+
+      .project-content {
+        width: 60%;
+        padding: 30px;
+      }
+    }
+  </style>
+
+  <div class="projects-wrapper">
+    <h2 class="projects-title">Featured Projects</h2>
+
+    <div class="project-card">
+      <img src="images/NoteForge.png" alt="NoteForge" />
+      <div class="project-content">
+        <h3>NoteForge</h3>
+        <p>A note-sharing platform built with React Native, Express.js, MongoDB, and Cloudinary.</p>
+        <a href="https://github.com/datta-thota/NoteForge" target="_blank">🔗 View on GitHub</a>
       </div>
-       <p style="text-align: center; color: #ccc; font-size: 0.9rem; margin-bottom: 16px; font-style: italic;">
-  ← Slide to view screens of the project →
-    </p>
     </div>
 
-    <!-- UIDAI -->
-    <div class="project-block" style="margin-bottom: 40px;">
-      <h3 style="font-size: 1.4rem; margin-bottom: 10px;">🌟 UIDAI Redesign</h3>
-      <p style="margin-bottom: 15px; font-size: 0.9rem; color: #ccc;">
-        A minimal and accessible redesign of the UIDAI login interface.
-      </p>
-      <div class="scroll-slider" style="display: flex; overflow-x: auto; gap: 12px; scroll-snap-type: x mandatory; padding-bottom: 8px;">
-        <div style="min-width: 160px; scroll-snap-align: start;">
-          <img src="images/p1.png" style="width: 100%; border-radius: 8px;" />
-          <p style="font-size: 0.8rem; margin-top: 5px;">Accessible Home</p>
-        </div>
-        <div style="min-width: 160px; scroll-snap-align: start;">
-          <img src="images/p2.png" style="width: 100%; border-radius: 8px;" />
-          <p style="font-size: 0.8rem; margin-top: 5px;">Behavior Auth UI</p>
-        </div>
-        <div style="min-width: 160px; scroll-snap-align: start;">
-          <img src="images/p3.png" style="width: 100%; border-radius: 8px;" />
-          <p style="font-size: 0.8rem; margin-top: 5px;">Login Dashboard</p>
-        </div>
+    <div class="project-card">
+      <img src="images/j1.png" alt="Beyond CAPTCHA" />
+      <div class="project-content">
+        <h3>Beyond CAPTCHA</h3>
+        <p>Replaces CAPTCHA using behavioral biometrics. Built with Python, React, and TensorFlow.</p>
+        <a href="https://github.com/datta-thota/Beyond-CAPTCHA" target="_blank">🔗 View on GitHub</a>
       </div>
-      <p style="text-align: center; color: #ccc; font-size: 0.9rem; margin-bottom: 16px; font-style: italic;">
-  ← Slide to view screens of the project →
-    </p>
     </div>
 
-    <!-- Ideal State -->
-    <div class="project-block" style="margin-bottom: 40px;">
-      <h3 style="font-size: 1.4rem; margin-bottom: 10px;">🌟 Ideal State (in progress)</h3>
-      <p style="margin-bottom: 15px; font-size: 0.9rem; color: #ccc;">
-        A satire platform celebrating... absolutely nothing. A minimal and ironic take on social media.
-      </p>
-      <div class="scroll-slider" style="display: flex; overflow-x: auto; gap: 12px; scroll-snap-type: x mandatory; padding-bottom: 8px;">
-        <div style="min-width: 160px; scroll-snap-align: start;">
-          <img src="images/d1.png" style="width: 100%; border-radius: 8px;" />
-          <p style="font-size: 0.8rem; margin-top: 5px;">Nothing Landing</p>
-        </div>
-        <div style="min-width: 160px; scroll-snap-align: start;">
-          <img src="images/d2.png" style="width: 100%; border-radius: 8px;" />
-          <p style="font-size: 0.8rem; margin-top: 5px;">Login Page</p>
-        </div>
-        <div style="min-width: 160px; scroll-snap-align: start;">
-          <img src="images/d3.png" style="width: 100%; border-radius: 8px;" />
-          <p style="font-size: 0.8rem; margin-top: 5px;">Home (WIP)</p>
-        </div>
+    <div class="project-card">
+      <img src="images/inexp.png" alt="Inexpen Pharma" />
+      <div class="project-content">
+        <h3>The Inexpen Pharma</h3>
+        <p>Affordable pharmacy e-commerce built with React.js and SQL. UI designed in Figma.</p>
+        <a href="https://github.com/datta-thota/The-Inexpen-Pharma" target="_blank">🔗 View on GitHub</a>
       </div>
-      <p style="text-align: center; color: #ccc; font-size: 0.9rem; margin-bottom: 16px; font-style: italic;">
-  ← Slide to view screens of the project →
-    </p>
     </div>
   </div>
 </section>
+
+
+
+
+<br>
+<br>
+<section style="font-family: 'Georgia', serif; background: #fef2e6; padding: 60px 20px; text-align: center; position: relative; overflow: hidden; border-radius: 20px;">
+
+  <!-- UI/UX DESIGN Title -->
+  <h1 style="font-size: 68px; font-weight: 900; letter-spacing: 4px; color: #356a6a; font-family: Impact, sans-serif; margin: 0 0 10px; animation: slideDown 1s ease forwards; opacity: 0;">
+    UI/UX DESIGN
+  </h1>
+
+  <!-- Portfolio Subtitle -->
+  <h2 style="font-size: 36px; font-family: 'Lucida Handwriting', cursive; color: #333; margin: 0; animation: fadeIn 2s ease forwards; opacity: 0;">
+    Portfolio
+  </h2>
+
+  <!-- Name Badge -->
+  <div style="margin-top: 25px; display: inline-block; background: linear-gradient(to right, #dcbfff, #f8e1ff); padding: 10px 30px; border-radius: 12px; font-size: 20px; color: #2e2e2e; font-weight: bold; font-family: Arial, sans-serif; animation: zoomIn 1.4s ease-out forwards; opacity: 0;">
+    ✦ Datta Thota ✦
+  </div>
+
+  <!-- Tagline -->
+  <div style="margin-top: 30px; display: inline-block; background: #fdbd5f; padding: 12px 20px; border-radius: 8px; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; color: #222; animation: fadeUp 2.5s ease forwards; opacity: 0;">
+    Crafting Seamless Experiences: Where Design Meets User Delight
+  </div>
+
+  <!-- Design Icons/Shapes -->
+  <div style="margin-top: 35px; display: flex; justify-content: center; align-items: center; gap: 15px;">
+    <div style="width: 55px; height: 55px; background: #222; border-radius: 12px; display: flex; align-items: center; justify-content: center; animation: shape1 2.2s ease forwards; opacity: 0;">
+      <div style="width: 22px; height: 22px; border-radius: 50%; background: #fff;"></div>
+    </div>
+    <div style="width: 55px; height: 55px; background: #fff; border: 2px solid #222; border-radius: 12px; display: flex; align-items: center; justify-content: center; animation: shape2 2.4s ease forwards; opacity: 0;">
+      <div style="width: 22px; height: 22px; background: #222; clip-path: polygon(0 50%, 50% 0, 100% 50%, 50% 100%);"></div>
+    </div>
+  </div>
+
+  <!-- View Designs Button -->
+  <a href="design.html"
+     style="margin-top: 40px; display: inline-block; background: #356a6a; color: #fff; padding: 12px 28px; font-size: 18px; border-radius: 10px; text-decoration: none; font-weight: bold; font-family: Arial, sans-serif; animation: buttonPop 2.6s ease forwards; opacity: 0; transition: transform 0.3s ease;"
+     onmouseover="this.style.transform='scale(1.07)'" onmouseout="this.style.transform='scale(1)'">
+    ➤ View My Designs
+  </a>
+
+  <!-- Animations -->
+  <style>
+    @keyframes slideDown {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes zoomIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    @keyframes fadeUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes shape1 {
+      from { transform: scale(0.5) rotate(-90deg); opacity: 0; }
+      to { transform: scale(1) rotate(0); opacity: 1; }
+    }
+    @keyframes shape2 {
+      from { transform: scale(0.5) rotate(90deg); opacity: 0; }
+      to { transform: scale(1) rotate(0); opacity: 1; }
+    }
+    @keyframes buttonPop {
+      from { transform: scale(0.5); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+  </style>
+
+</section>
+
+
 
 <!-- Certifications -->
 <section id="certifications" class="glass-section dark">
