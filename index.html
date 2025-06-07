@@ -191,92 +191,91 @@
 <header id="hero" style="position: relative;">
 
   <!-- Apple Dynamic Island-like Navbar -->
-  <nav id="dynamicNav" style="
-    position: absolute;
-    top: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 10px 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(8px);
-    border-radius: 999px;
-    height: 48px;
-    min-width: 320px;
-    max-width: 100%;
-    z-index: 20;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
-    transition: all 0.4s ease;
-  "
-  onmouseenter="expandNav()"
-  onmouseleave="shrinkNav()"
-  >
-    <!-- Name -->
-    <div style="
-      font-size: 18px;
-      font-weight: bold;
-      color: #fff;
-      font-family: 'Bebas Neue', sans-serif;
-      letter-spacing: 1px;
-      margin-right: 24px;
-      white-space: nowrap;
-    ">
-      Datta Thota
-    </div>
+  <nav id="dynamicNav" class="nav-container">
+  <div class="nav-title">Datta Thota</div>
+  <div class="nav-buttons">
+    <a href="#about" class="nav-btn">Explore</a>
+    <a href="#projects" class="nav-btn">Projects</a>
+    <a href="#contact" class="nav-btn">Connect</a>
+  </div>
+</nav>
 
-    <!-- Buttons -->
-    <div style="display: flex; gap: 12px;">
-      <a href="#about" role="button" style="
-        padding: 6px 14px;
-        background-color: #111;
-        color: #fff;
-        text-decoration: none;
-        border-radius: 999px;
-        font-size: 13px;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-        display: inline-block;
-      "
-      onmouseover="this.style.backgroundColor='#2a2a2a'; this.style.transform='scale(1.05)';"
-      onmouseout="this.style.backgroundColor='#111'; this.style.transform='scale(1)';"
-      >Explore</a>
+  <style>
+  /* Universal box sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 
-      <a href="#projects" role="button" style="
-        padding: 6px 14px;
-        background-color: #1b1b1b;
-        color: #fff;
-        text-decoration: none;
-        border-radius: 999px;
-        font-size: 13px;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-        display: inline-block;
-      "
-      onmouseover="this.style.backgroundColor='#444'; this.style.transform='scale(1.05)';"
-      onmouseout="this.style.backgroundColor='#1b1b1b'; this.style.transform='scale(1)';"
-      >Projects</a>
+.nav-container {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 6px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+  border-radius: 999px;
+  height: auto;
+  width: fit-content;
+  max-width: 95vw;
+  z-index: 20;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  gap: 8px;
+  overflow: hidden;
+}
 
-      <a href="#contact" role="button" style="
-        padding: 6px 14px;
-        background-color: #1b1b1b;
-        color: #fff;
-        text-decoration: none;
-        border-radius: 999px;
-        font-size: 13px;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-        display: inline-block;
-      "
-      onmouseover="this.style.backgroundColor='#444'; this.style.transform='scale(1.05)';"
-      onmouseout="this.style.backgroundColor='#1b1b1b'; this.style.transform='scale(1)';"
-      >Connect</a>
-    </div>
-  </nav>
+.nav-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 6px;
+  flex-wrap: nowrap;
+}
+
+.nav-btn {
+  padding: 4px 10px;
+  background-color: #111;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.nav-btn:hover {
+  background-color: #2a2a2a;
+  transform: scale(1.05);
+}
+
+/* Optional: Shrink even more on ultra-small screens */
+@media (max-width: 360px) {
+  .nav-title {
+    font-size: 13px;
+  }
+
+  .nav-btn {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+}
+
+</style>
+
+
 
   <!-- Background Iframe -->
   <iframe src="j.html" style="width:100%; height:100vh; border:none;" loading="lazy"></iframe>

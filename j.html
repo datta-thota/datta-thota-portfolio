@@ -6,6 +6,8 @@
   <title>Datta Thota Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Great+Vibes&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Meow+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
 
   <style>
     * {
@@ -129,13 +131,15 @@
 
 @media (max-width: 480px) {
   .title {
-    font-size: 13vw;
-    -webkit-text-stroke: 0.8px rgb(0, 0, 0);
-    letter-spacing: 0.02em;
-    margin-top: -8vh;
-      line-height: 1;
-
-  }
+font-family: 'Anton', sans-serif;  font-size: 19vw;
+  color: #f0f4f8; /* light, soft fill color */
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.6); /* slightly thicker, semi-transparent black stroke */
+  letter-spacing: 0.04em;
+  margin-top: -8vh;
+  line-height: 1;
+  text-transform: uppercase; /* optional */
+  user-select: none;
+}
 
   .name {
     font-size: 14vw;
@@ -176,39 +180,27 @@
   padding-bottom: 60px; /* adds room below */
 }
 
-  .hero-quote {
-    display: block;
-    font-family: 'Archivo Black', sans-serif;
-    font-size: 6vw;
-    font-weight: 700;
-    color: #111;
-    text-align: left;
-    margin-top: 2rem;
-    padding: 0 16px;
-    z-index: 999;
-    position: absolute;
-    top: 90px;
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0;
-    animation: fadeInQuote 1.2s ease-out 0.3s forwards;
-    line-height: -0.9;
 
-  }
 
   .hero-quote span {
     color: #ff003c;
     font-style: italic;
   }
-  .bg-top {
-      background: #ffe6e6; /* dark shade */
-    }
-    .bg-middle {
-      background: #cdefff; /* strong electric blue */
-    }
-    .bg-bottom {
-      background: #ffeabf; /* deep pink */
-    }
+ .bg-top {
+  background: url('ddd.png') no-repeat center center;
+  background-size: cover;
+}
+
+/* Slightly deeper, elegant teal for contrast */
+.bg-middle {
+background: url('jj.jpg') no-repeat center center;
+  background-size: cover;}
+
+.bg-bottom {
+  background: #d0e6f7; /* Warm parchment cream */
+}
+
+
 }
 
 @keyframes fadeInQuote {
@@ -246,16 +238,9 @@
   }
 }
 
-
-
-
   </style>
 </head>
 <body>
-<div class="hero-quote">
-  “You’re not here by accident . <span>this was built with you in mind..</span>”
-</div>
-
     <div class="scrolling-text">
   <div class="scrolling-inner">
    <span>Designer – Developer – Human • </span>
