@@ -10,7 +10,16 @@
     * {
       box-sizing: border-box;
     }
+@keyframes breathe {
+  0% { transform: translateX(-50%) scale(1); opacity: 0.6; }
+  50% { transform: translateX(-50%) scale(1.05); opacity: 1; }
+  100% { transform: translateX(-50%) scale(1); opacity: 0.6; }
+}
 
+@keyframes bounceScroll {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
     body {
       margin: 0;
       padding: 0;
@@ -176,14 +185,101 @@
 </head>
 <body>
   <div class="hero-section">
-    <div class="presentation-label">Datta Thota</div>
-    <h1 class="hero-title">PORTFOLIO</h1>
-    <div class="hero-sub">Pixel & Paper</div>
-    <div class="decor-star">*</div>
-    <div class="top-right">2025</div>
-    <div class="bottom-left">Purushothama Datta Thota</div>
-    <div class="right-arrow" id="scroll-arrow">&#8595;</div>
-<div class="scroll-note">Scroll down to explore</div>
+  <div class="presentation-label">A Glimpse Inside</div>
+  <h1 class="hero-title">DESIGN DIMENSION</h1>
+  <div class="hero-sub">Beyond the Pixels</div>
+  <div class="decor-star">*</div>
+<div class="top-right">Director's cut</div>
+  <div class="bottom-left">crafted by Datta Thota</div>
+  <div class="right-arrow" id="scroll-arrow">&#8595;</div>
+</div>
+
+<div style="
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 130px;
+  height: 130px;
+  z-index: 9999;
+  pointer-events: none;
+">
+  <div style="
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.08), transparent);
+    box-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.4);
+    animation: pulseGlow 3s ease-in-out infinite;
+  ">
+    <svg width="100%" height="100%" viewBox="0 0 200 200" style="overflow: visible; position: absolute; top: 0; left: 0;">
+      <defs>
+        <path id="circlePath" d="M 100, 100 m -80, 0 a 80,80 0 1,1 160,0 a 80,80 0 1,1 -160,0"/>
+      </defs>
+
+     <!-- Rotating Text -->
+<g style="animation: rotateText 10s linear infinite;">
+  <text font-size="13" font-weight="bold" font-family='Arial Black, sans-serif' letter-spacing="2">
+    <textPath xlink:href="#circlePath" startOffset="0%" fill="url(#textGradient)" style="text-shadow: 0 0 5px rgba(0,0,0,0.4), 0 0 8px rgba(255,255,255,0.3);">
+      • SCROLL TO EXPLORE • SCROLL TO EXPLORE • SCROLL TO EXPLORE • SCROLL TO EXPLORE •
+    </textPath>
+  </text>
+</g>
+
+<defs>
+  <!-- Gradient that works on both dark and light -->
+  <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="#f04c23"/>
+    <stop offset="50%" stop-color="#ff2e91"/>
+    <stop offset="100%" stop-color="#e53935"/>
+  </linearGradient>
+</defs>
+
+      <!-- Center Icon -->
+      <text x="100" y="112" text-anchor="middle" font-size="30" fill="#ffffff" font-family="Arial Black" style="text-shadow: 0 0 8px rgba(255,255,255,0.5);">↓</text>
+    </svg>
+  </div>
+</div>
+
+<style>
+@keyframes rotateText {
+  0% { transform: rotate(0deg); transform-origin: 100px 100px; }
+  100% { transform: rotate(360deg); transform-origin: 100px 100px; }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.4);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(0,0,0,1), 0 0 60px rgba(255,255,255,0.1);
+    transform: scale(1.05);
+  }
+}
+
+@media (max-width: 600px) {
+  div[style*="position: fixed"] {
+    width: 90px !important;
+    height: 90px !important;
+    right: 10px !important;
+    bottom: 10px !important;
+  }
+
+  svg text {
+    font-size: 10px !important;
+  }
+
+  svg text[text-anchor="middle"] {
+    font-size: 22px !important;
+  }
+}
+</style>
+
+
+
+  <div style="font-size: 18px; margin-top: 6px;">↓</div>
+</div>
 
     <img src="21.png" class="doodle doodle1" alt="Creative Illustration">
     <img src="22.png" class="doodle doodle2" alt="UI Flow">
