@@ -150,6 +150,264 @@
 </head>
 <body>
 
+  <section id="hero-uiux-design-dimension">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Pacifico&display=swap');
+
+    #hero-uiux-design-dimension * {
+      box-sizing: border-box;
+    }
+
+    #hero-uiux-design-dimension {
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    #hero-uiux-design-dimension .hero-section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      background: linear-gradient(145deg, #fff 0%, #fefefe 40%, #eaeaea 100%);
+      padding: 20px;
+      overflow: hidden;
+    }
+
+    #hero-uiux-design-dimension .hero-title {
+      font-size: 6rem;
+      font-weight: 900;
+      color: #222;
+      margin: 0;
+      position: relative;
+      z-index: 2;
+      line-height: 1.1;
+      letter-spacing: 3px;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    }
+
+    #hero-uiux-design-dimension .hero-sub {
+      font-family: 'Pacifico', cursive;
+      font-size: 3rem;
+      color: #f04c23;
+      position: relative;
+      margin-top: -30px;
+      z-index: 2;
+    }
+
+    #hero-uiux-design-dimension .presentation-label {
+      color: #f04c23;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+      font-size: 3rem;
+      z-index: 2;
+      text-transform: uppercase;
+    }
+
+    #hero-uiux-design-dimension .top-right,
+    #hero-uiux-design-dimension .bottom-left,
+    #hero-uiux-design-dimension .right-arrow {
+      position: absolute;
+      z-index: 2;
+    }
+
+    #hero-uiux-design-dimension .top-right {
+      top: 20px;
+      right: 20px;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #222;
+    }
+
+    #hero-uiux-design-dimension .bottom-left {
+      bottom: 20px;
+      left: 20px;
+      font-size: 0.9rem;
+      color: #444;
+    }
+
+    #hero-uiux-design-dimension .right-arrow {
+      right: 20px;
+      bottom: 20px;
+      font-size: 2rem;
+      color: #222;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    #hero-uiux-design-dimension .right-arrow:hover {
+      transform: translateY(5px);
+    }
+
+    #hero-uiux-design-dimension .decor-star {
+      position: absolute;
+      top: 50%;
+      right: 14%;
+      font-size: 4rem;
+      color: #f04c23;
+      transform: translateY(-50%);
+      z-index: 2;
+      opacity: 0.7;
+    }
+
+    #hero-uiux-design-dimension .doodle {
+      position: absolute;
+      width: 180px;
+      opacity: 0.9;
+      filter: drop-shadow(0 0 12px rgba(240, 76, 35, 0.5));
+      z-index: 1;
+    }
+
+    #hero-uiux-design-dimension .doodle1 { top: 8%; left: 4%; }
+    #hero-uiux-design-dimension .doodle2 { bottom: 10%; right: 6%; }
+    #hero-uiux-design-dimension .doodle3 { top: 20%; right: 20%; }
+    #hero-uiux-design-dimension .doodle4 { bottom: 25%; left: 20%; width: 120px; }
+    #hero-uiux-design-dimension .doodle5 { top: 70%; left: 50%; width: 110px; transform: translate(-50%, -50%); }
+
+    #hero-uiux-design-dimension .scanlines {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(to bottom, rgba(255,255,255,0.02), rgba(255,255,255,0.02) 2px, transparent 2px, transparent 4px);
+      pointer-events: none;
+      z-index: 3;
+      mix-blend-mode: overlay;
+    }
+
+    #hero-uiux-design-dimension .scroll-down {
+      height: 100vh;
+      background: #000;
+    }
+
+    #hero-uiux-design-dimension iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    @keyframes rotateText {
+      0% { transform: rotate(0deg); transform-origin: 100px 100px; }
+      100% { transform: rotate(360deg); transform-origin: 100px 100px; }
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% {
+        box-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.4);
+        transform: scale(1);
+      }
+      50% {
+        box-shadow: 0 0 30px rgba(0,0,0,1), 0 0 60px rgba(255,255,255,0.1);
+        transform: scale(1.05);
+      }
+    }
+
+    @media (max-width: 768px) {
+      #hero-uiux-design-dimension .hero-title { font-size: 3.5rem; }
+      #hero-uiux-design-dimension .hero-sub { font-size: 2rem; margin-top: -20px; }
+      #hero-uiux-design-dimension .presentation-label { font-size: 1.5rem; }
+      #hero-uiux-design-dimension .top-right,
+      #hero-uiux-design-dimension .bottom-left,
+      #hero-uiux-design-dimension .right-arrow { font-size: 0.8rem; }
+      #hero-uiux-design-dimension .right-arrow { font-size: 1.5rem; }
+      #hero-uiux-design-dimension .decor-star { font-size: 2.5rem; right: 8%; }
+      #hero-uiux-design-dimension .doodle { width: 100px; }
+    }
+
+    @media (max-width: 480px) {
+      #hero-uiux-design-dimension .hero-title { font-size: 2.5rem; }
+      #hero-uiux-design-dimension .hero-sub { font-size: 1.5rem; }
+      #hero-uiux-design-dimension .decor-star { font-size: 2rem; }
+    }
+
+    @media (max-width: 600px) {
+      #hero-uiux-design-dimension div[style*="position: fixed"] {
+        width: 90px !important;
+        height: 90px !important;
+        right: 10px !important;
+        bottom: 10px !important;
+      }
+
+      #hero-uiux-design-dimension svg text {
+        font-size: 10px !important;
+      }
+
+      #hero-uiux-design-dimension svg text[text-anchor="middle"] {
+        font-size: 22px !important;
+      }
+    }
+  </style>
+
+  <!-- Main Hero -->
+  <div class="hero-section">
+    <div class="presentation-label">A Glimpse Inside</div>
+    <h1 class="hero-title">DESIGN DIMENSION</h1>
+    <div class="hero-sub">Beyond the Pixels</div>
+    <div class="decor-star">*</div>
+    <div class="top-right">Director's cut</div>
+    <div class="bottom-left">crafted by Datta Thota</div>
+    <div class="right-arrow" id="scroll-arrow">&#8595;</div>
+
+    <!-- Doodles -->
+    <img src="21.png" class="doodle doodle1" alt="Creative Illustration">
+    <img src="22.png" class="doodle doodle2" alt="UI Flow">
+    <img src="23.png" class="doodle doodle3" alt="UX Elements">
+    <img src="25.png" class="doodle doodle4" alt="UX Elements">
+  </div>
+
+  <!-- Scroll Badge -->
+  <div style="position: fixed; right: 20px; bottom: 20px; width: 130px; height: 130px; z-index: 9999; pointer-events: none;">
+    <div style="position: relative; width: 100%; height: 100%; border-radius: 50%; background: radial-gradient(circle at center, rgba(255,255,255,0.08), transparent); box-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.4); animation: pulseGlow 3s ease-in-out infinite;">
+      <svg width="100%" height="100%" viewBox="0 0 200 200" style="overflow: visible; position: absolute; top: 0; left: 0;">
+        <defs>
+          <path id="circlePath" d="M 100, 100 m -80, 0 a 80,80 0 1,1 160,0 a 80,80 0 1,1 -160,0"/>
+        </defs>
+        <g style="animation: rotateText 10s linear infinite;">
+          <text font-size="13" font-weight="bold" font-family='Arial Black, sans-serif' letter-spacing="2">
+            <textPath xlink:href="#circlePath" startOffset="0%" fill="url(#textGradient)" style="text-shadow: 0 0 5px rgba(0,0,0,0.4), 0 0 8px rgba(255,255,255,0.3);">
+              • SCROLL TO EXPLORE • SCROLL TO EXPLORE • SCROLL TO EXPLORE • SCROLL TO EXPLORE •
+            </textPath>
+          </text>
+        </g>
+        <defs>
+          <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#f04c23"/>
+            <stop offset="50%" stop-color="#ff2e91"/>
+            <stop offset="100%" stop-color="#e53935"/>
+          </linearGradient>
+        </defs>
+        <text x="100" y="112" text-anchor="middle" font-size="30" fill="#ffffff" font-family="Arial Black" style="text-shadow: 0 0 8px rgba(255,255,255,0.5);">↓</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Scanlines -->
+  <div class="scanlines"></div>
+
+  <!-- Embedded Section -->
+  
+
+  <!-- Motion Script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script>
+    const doodles = document.querySelectorAll('#hero-uiux-design-dimension .doodle');
+    doodles.forEach((doodle) => {
+      gsap.to(doodle, {
+        y: "+=" + (10 + Math.random() * 10),
+        x: "+=" + (5 + Math.random() * 10),
+        rotation: (Math.random() * 10 - 5),
+        duration: 3 + Math.random() * 2,
+        ease: "sine.inOut",
+        yoyo: true,
+        repeat: -1,
+      });
+    });
+  </script>
+</section>
+
   <!-- HERO SECTION -->
 <section class="hero" style="text-align: center; padding: 100px 20px; position: relative;">
   <h1 style="font-size: 3rem; margin-bottom: 10px;">DESIGNING IMPACT</h1>

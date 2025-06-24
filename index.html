@@ -289,113 +289,176 @@
 <br>
 <!-- About -->
 <!-- About -->
-<section id="about" style="padding: 80px 20px; background: linear-gradient(135deg, #0f0f0f, #1a1a1a); border-radius: 24px; color: #eaeaea; font-family: 'Inter', sans-serif; overflow: hidden;">
+<section id="about" style="position: relative; padding: 140px 20px; background: #0a0a0a; color: #f1f1f1; overflow: hidden; font-family: 'Space Mono', monospace;">
   <style>
-    #about .about-container {
-      max-width: 1100px;
-      margin: auto;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 40px;
+    @import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+
+    #about::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url('https://grainy-gradients.vercel.app/noise.svg');
+      opacity: 0.05;
+      pointer-events: none;
+      z-index: 1;
     }
 
-    .profile-img {
-      width: 280px;
-      height: 280px;
-      border-radius: 50%;
-      border: 4px solid rgba(255,255,255,0.1);
-      object-fit: cover;
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
-      filter: brightness(1.1);
-      transition: transform 0.4s ease;
+    #about::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(to bottom, rgba(255,255,255,0.02), rgba(255,255,255,0.02) 2px, transparent 2px, transparent 4px);
+      z-index: 2;
+      mix-blend-mode: overlay;
+      animation: flicker 2s infinite;
+      pointer-events: none;
     }
 
-    .profile-img:hover {
-      transform: scale(1.05) rotate(-1deg);
+    @keyframes flicker {
+      0%, 100% { opacity: 0.05; }
+      50% { opacity: 0.12; }
     }
 
-    .about-text h2 {
-      font-size: 2.6rem;
-      color: #fff;
-      margin-bottom: 20px;
-      font-family: 'Bebas Neue', sans-serif;
-      letter-spacing: 1px;
-    }
-
-    .about-text p {
-      font-size: 1.05rem;
-      line-height: 1.8;
-      margin-bottom: 25px;
-      color: #ccc;
-    }
-
-    .about-text p strong {
-      color: #fff;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .tag {
-      padding: 6px 14px;
-      background: rgba(255,255,255,0.06);
-      border-radius: 999px;
-      font-size: 0.85rem;
-      backdrop-filter: blur(4px);
+    #about .scene-time {
+      position: absolute;
+      top: 16px;
+      left: 20px;
+      font-size: 0.9rem;
+      background: #111;
+      padding: 6px 12px;
+      color: #bbb;
+      border-radius: 6px;
       border: 1px solid rgba(255,255,255,0.1);
-      box-shadow: inset 0 0 6px rgba(255,255,255,0.05);
-      transition: background 0.3s ease;
+      z-index: 4;
     }
 
-    .tag:hover {
-      background: rgba(255,255,255,0.12);
+    #about .script-block {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #0d0d0d;
+      box-shadow: 0 0 80px rgba(255,255,255,0.02);
+      position: relative;
+      z-index: 5;
+      opacity: 0;
+      transform: translateY(60px);
+    }
+
+    .line {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 10px;
+      white-space: pre-wrap;
+    }
+
+    .credit {
+      margin-top: 40px;
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-align: center;
+      color: #fdfdfd;
+    }
+
+    .behance-btn {
+      margin-top: 20px;
+      display: inline-block;
+      background: #fff;
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 12px 26px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .behance-btn:hover {
+      background: #eee;
     }
 
     @media (max-width: 768px) {
-      .profile-img {
-        width: 200px;
-        height: 200px;
-      }
-
-      .about-text h2 {
-        font-size: 2rem;
-      }
-
-      .about-text p {
-        font-size: 0.95rem;
-      }
+      .line { font-size: 1rem; }
+      .credit { font-size: 1.4rem; }
     }
   </style>
 
-  <div class="about-container">
-    <!-- Profile Image -->
-    <div style="flex: 1; min-width: 260px; display: flex; justify-content: center;">
-      <img src="Datta.jpg" alt="Purushothama Datta Thota" class="profile-img" />
-    </div>
+  <div class="scene-time" id="sceneTime">SCENE 01 | TIME --:--:--</div>
 
-    <!-- Story + Tags -->
-    <div class="about-text" style="flex: 2; min-width: 300px;">
-      <h2>So, who’s Datta?</h2>
-
-      <p>
-        A <strong>developer who designs</strong> and a <strong>designer who codes</strong>.<br />
-        From bold interfaces to backend logic, I turn raw ideas into expressive digital experiences. Whether it’s a clean UI, an ML model, or a moment in pixels — I’m all in.
-      </p>
-
-      <div class="tags">
-        <span class="tag">🎨 UI/UX Designer</span>
-        <span class="tag">💻 Full Stack Dev</span>
-        <span class="tag">📊 Data Science</span>
-        <span class="tag">📍 Andhra Pradesh, India</span>
-        <span class="tag">🎓 B.Tech IT @ SRGEC</span>
-        <span class="tag">🧠 ACM Chair</span>
-      </div>
+  <div class="script-block" id="scriptBlock">
+    <div class="line" id="scriptText"></div>
+    <div class="credit">Purushothama Datta Thota</div>
+    <div style="text-align:center">
+      <a href="https://www.behance.net/dattathota" class="behance-btn" target="_blank">🎞️ Check Behance</a>
     </div>
   </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script>
+    const lines = [
+  "INT. DATTA’S MIND — NIGHT",
+  "",
+  "Not just a screen. A vision.",
+  "Design breathes. Code listens.",
+  "",
+  "Each bug? A challenge.",
+  "Each pixel? A decision.",
+  "",
+  "He doesn’t just build interfaces.",
+  "He crafts journeys.",
+  "",
+  "This isn’t UI.",
+  "This is storytelling.",
+  "",
+  "Purushothama Datta —",
+  "Engineer by skill. Designer by heart."
+];
+
+
+    const scriptEl = document.getElementById('scriptText');
+    const block = document.getElementById('scriptBlock');
+
+    function updateTime() {
+      const now = new Date();
+      const pad = (n) => n.toString().padStart(2, '0');
+      document.getElementById("sceneTime").textContent = `SCENE 01 | TIME ${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`;
+    }
+    updateTime();
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          gsap.to(block, {
+            opacity: 1,
+            y: 0,
+            duration: 1.4,
+            ease: "power3.out"
+          });
+          typeLine(0);
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.4 });
+
+    observer.observe(block);
+
+    function typeLine(index) {
+      if (index >= lines.length) return;
+      let charIndex = 0;
+      const line = lines[index];
+      const lineContainer = document.createElement('div');
+      lineContainer.className = 'line';
+      scriptEl.appendChild(lineContainer);
+
+      const interval = setInterval(() => {
+        if (charIndex < line.length) {
+          lineContainer.textContent += line.charAt(charIndex);
+          charIndex++;
+        } else {
+          clearInterval(interval);
+          typeLine(index + 1);
+        }
+      }, 70);
+    }
+  </script>
 </section>
 
 
@@ -403,78 +466,279 @@
 
 <br>
 <br>
-<!-- Skills -->
-<section id="skills" class="glass-section light">
-  <div class="container">
-    <h2>Skills & Tools</h2>
-    <div class="skills-grid">
-
-      <div class="skill-box">
-        <h3><i class="fas fa-code"></i> Languages</h3>
-        <p>Python, Java, JavaScript</p>
-      </div>
-
-      <div class="skill-box">
-        <h3><i class="fas fa-globe"></i> Web Technologies</h3>
-        <p>HTML, CSS, React.js</p>
-      </div>
-     <div class="skill-box">
-        <h3><i class="fas fa-code"></i> App Technologies</h3>
-        <p>React Native</p>
-      </div>
-      <div class="skill-box">
-        <h3><i class="fas fa-database"></i> Databases</h3>
-        <p>MongoDB, SQL, MySQL</p>
-      </div>
-
-      <div class="skill-box">
-        <h3><i class="fas fa-tools"></i> Tools</h3>
-        <p>Figma, Power BI, Git, GitHub</p>
-      </div>
-
-      <div class="skill-box">
-        <h3><i class="fas fa-brain"></i> Focus Areas</h3>
-        <p>Full-Stack Development, UI UX Designer, Data science</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-<br>
-<br>
-<section id="projects" style="padding: 60px 20px; background: #0f0f0f; border-radius: 20px;">
+<section id="skills" style="position: relative; padding: 100px 20px; background: rgba(10,10,10,0.95); overflow: hidden; font-family: 'Space Mono', monospace; color: #f1f1f1;">
   <style>
+    #skills .container {
+      max-width: 1100px;
+      margin: auto;
+      z-index: 2;
+      position: relative;
+    }
+
+    #skills .scene-time {
+      position: absolute;
+      top: 16px;
+      left: 20px;
+      font-size: 0.9rem;
+      background: #111;
+      padding: 6px 12px;
+      color: #bbb;
+      border-radius: 6px;
+      border: 1px solid rgba(255,255,255,0.1);
+      z-index: 4;
+    }
+
+    #skills .scene-script {
+      background: #0d0d0d;
+      border: 1px solid rgba(255,255,255,0.06);
+      padding: 20px;
+      margin: 0 auto 50px;
+      max-width: 700px;
+      text-align: center;
+      font-size: 1rem;
+      color: #f04c23;
+      line-height: 1.6;
+      border-radius: 12px;
+      box-shadow: 0 0 40px rgba(255,255,255,0.04);
+    }
+
+    #skills h2 {
+      font-size: 2.8rem;
+      text-align: center;
+      margin-bottom: 60px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      background: linear-gradient(to right, #ccc, #fff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    #skills .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+    }
+
+    #skills .group {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 30px 24px;
+      box-shadow: 0 0 25px rgba(255,255,255,0.02);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    #skills .group:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 40px rgba(255,255,255,0.08);
+    }
+
+    #skills .group h3 {
+      font-size: 1.3rem;
+      color: #fff;
+      margin-bottom: 16px;
+      border-left: 3px solid #f04c23;
+      padding-left: 10px;
+    }
+
+    #skills .group ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    #skills .group ul li {
+      font-size: 0.95rem;
+      color: #ccc;
+      padding: 6px 0;
+      border-bottom: 1px dashed rgba(255,255,255,0.05);
+    }
+
+    @media (max-width: 600px) {
+      #skills h2 { font-size: 2rem; }
+      #skills .skills-grid { grid-template-columns: 1fr; }
+      #skills .scene-script { font-size: 0.95rem; }
+    }
+  </style>
+
+  <div class="scene-time" id="sceneTimeSkills">SCENE 02 | TIME --:--:--</div>
+
+  <div class="container">
+    <div class="scene-script">
+      INT. DESIGN STUDIO – <span id="timeOfDay">DAY</span><br>
+      Datta aligns his tools. Frontend breathes. Backend hums. Creativity clicks.
+    </div>
+
+    <h2>Skills & Tools</h2>
+
+    <div class="skills-grid">
+      <div class="group">
+  <h3>Languages</h3>
+  <ul>
+    <li>Python</li>
+    <li>Java</li>
+    <li>JavaScript</li>
+  </ul>
+</div>
+
+<div class="group">
+  <h3>Frontend</h3>
+  <ul>
+    <li>React.js</li>
+    <li>React Native</li>
+  </ul>
+</div>
+
+<div class="group">
+  <h3>Backend & DB</h3>
+  <ul>
+    <li>MongoDB</li>
+    <li>SQL</li>
+    <li>MySQL</li>
+  </ul>
+</div>
+
+<div class="group">
+  <h3>Design</h3>
+  <ul>
+    <li>Figma</li>
+    <li>UI/UX Design</li>
+    <li>Interaction Design</li>
+    <li>Motion Prototyping</li>
+  </ul>
+</div>
+
+<div class="group">
+  <h3>DevOps & Tools</h3>
+  <ul>
+    <li>Git, GitHub</li>
+    <li>Power BI</li>
+  </ul>
+</div>
+
+<div class="group">
+  <h3>Focus Areas</h3>
+  <ul>
+    <li>Full-Stack Development</li>
+    <li>Data Science</li>
+  </ul>
+</div>
+
+    </div>
+  </div>
+
+  <!-- Grain + Flicker -->
+  <div style="position:absolute;inset:0;z-index:0;pointer-events:none;mix-blend-mode:overlay;">
+    <div style="background: url('https://grainy-gradients.vercel.app/noise.svg'); width: 100%; height: 100%; opacity: 0.04;"></div>
+    <div style="background: repeating-linear-gradient(to bottom, rgba(255,255,255,0.01), rgba(255,255,255,0.01) 2px, transparent 2px, transparent 4px); height: 100%;"></div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script>
+    const skillsGroups = document.querySelectorAll('#skills .group');
+    const skillsObserver = new IntersectionObserver(entries => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          gsap.to(entry.target, {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: 'power3.out',
+            delay: i * 0.1
+          });
+          skillsObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    skillsGroups.forEach(group => skillsObserver.observe(group));
+
+    function updateSceneTimeAndDay() {
+      const now = new Date();
+      const h = now.getHours();
+      const m = now.getMinutes();
+      const s = now.getSeconds();
+      const pad = n => n.toString().padStart(2, '0');
+
+      const timeText = `SCENE 02 | TIME ${pad(h)}:${pad(m)}:${pad(s)}`;
+      document.getElementById("sceneTimeSkills").textContent = timeText;
+
+      const timeOfDay = (h >= 6 && h < 18) ? "DAY" : "NIGHT";
+      document.getElementById("timeOfDay").textContent = timeOfDay;
+    }
+
+    setInterval(updateSceneTimeAndDay, 1000);
+    updateSceneTimeAndDay();
+  </script>
+</section>
+
+
+
+<br>
+<br>
+<section id="projects" style="position: relative; padding: 120px 20px; background: #0b0b0b; color: #f1f1f1; font-family: 'Space Mono', monospace; overflow: hidden;">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
+    #projects .scene-time {
+      position: absolute;
+      top: 16px;
+      left: 20px;
+      font-size: 0.9rem;
+      background: #111;
+      padding: 6px 12px;
+      color: #bbb;
+      border-radius: 6px;
+      border: 1px solid rgba(255,255,255,0.1);
+      z-index: 4;
+    }
+
+    .scene-script {
+      text-align: center;
+      color: #f04c23;
+      font-size: 1rem;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
     .projects-wrapper {
-      max-width: 960px;
-      margin: auto;
+      max-width: 1080px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
     }
 
     .projects-title {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 2.8rem;
+      font-size: 3rem;
       color: white;
       text-align: center;
-      margin-bottom: 40px;
-      letter-spacing: 1px;
+      margin-bottom: 60px;
+      letter-spacing: 2px;
     }
 
     .project-card {
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
       border-radius: 20px;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 30px rgba(255, 255, 255, 0.02);
       overflow: hidden;
       margin-bottom: 30px;
       display: flex;
       flex-direction: column;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      transform: translateY(60px);
     }
 
     .project-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 12px 40px rgba(255, 255, 255, 0.08);
     }
 
     .project-card img {
@@ -484,7 +748,7 @@
     }
 
     .project-content {
-      padding: 20px;
+      padding: 24px;
     }
 
     .project-content h3 {
@@ -497,7 +761,7 @@
       color: #ccc;
       font-size: 0.95rem;
       margin-bottom: 16px;
-      line-height: 1.4;
+      line-height: 1.5;
     }
 
     .project-content a {
@@ -508,11 +772,12 @@
       border-radius: 8px;
       font-size: 0.9rem;
       display: inline-block;
-      transition: background 0.3s;
+      transition: background 0.3s, transform 0.3s;
     }
 
     .project-content a:hover {
       background: #ffef00;
+      transform: scale(1.05);
     }
 
     @media (min-width: 768px) {
@@ -533,9 +798,20 @@
     }
   </style>
 
+  <!-- Scene Clock -->
+  <div class="scene-time" id="sceneTimeProjects">SCENE 03 | TIME --:--:--</div>
+
+  <!-- Project Section -->
   <div class="projects-wrapper">
+    <div class="scene-script">
+  INT. PROJECT FLOOR – <span id="projectTimeOfDay">DAY</span><br>
+  Deadlines chase. Code breathes. Systems connect. He builds.
+</div>
+
+
     <h2 class="projects-title">Featured Projects</h2>
 
+    <!-- Project Cards -->
     <div class="project-card">
       <img src="images/NoteForge.png" alt="NoteForge" />
       <div class="project-content">
@@ -563,6 +839,47 @@
       </div>
     </div>
   </div>
+
+  <!-- Grain Overlay -->
+  <div style="position:absolute;inset:0;pointer-events:none;mix-blend-mode:overlay;z-index:0;">
+    <div style="background:url('https://grainy-gradients.vercel.app/noise.svg'); width:100%; height:100%; opacity:0.05;"></div>
+    <div style="background:repeating-linear-gradient(to bottom, rgba(255,255,255,0.01), rgba(255,255,255,0.01) 2px, transparent 2px, transparent 4px); height:100%;"></div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script>
+    const sceneTimeProjects = document.getElementById("sceneTimeProjects");
+    const projectTimeOfDay = document.getElementById("projectTimeOfDay");
+
+    function updateProjectSceneTime() {
+      const now = new Date();
+      const pad = n => n.toString().padStart(2, '0');
+      sceneTimeProjects.textContent = `SCENE 03 | TIME ${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`;
+      projectTimeOfDay.textContent = (now.getHours() >= 6 && now.getHours() < 18) ? "DAY" : "NIGHT";
+    }
+
+    setInterval(updateProjectSceneTime, 1000);
+    updateProjectSceneTime();
+
+    // Animate cards on scroll
+    document.querySelectorAll('.project-card').forEach((card, i) => {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            gsap.to(card, {
+              opacity: 1,
+              y: 0,
+              duration: 1,
+              delay: i * 0.1,
+              ease: "power3.out"
+            });
+            observer.disconnect();
+          }
+        });
+      }, { threshold: 0.2 });
+      observer.observe(card);
+    });
+  </script>
 </section>
 
 
@@ -570,17 +887,154 @@
 
 <br>
 <br>
-<iframe 
-  src="design.html" 
-  style="width: 100%; height: 100vh; border: none; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);"
-  loading="lazy">
-</iframe>
+<section id="uiux-section" style="position: relative; padding: 100px 0; background: #0a0a0a; font-family: 'Space Mono', monospace; color: #f1f1f1; overflow: hidden;">
+  <style>
+    #uiux-section .scene-time {
+      position: absolute;
+      top: 16px;
+      left: 20px;
+      font-size: 0.9rem;
+      background: #111;
+      padding: 6px 12px;
+      color: #bbb;
+      border-radius: 6px;
+      border: 1px solid rgba(255,255,255,0.1);
+      z-index: 4;
+    }
+
+    #uiux-section .scene-script {
+      text-align: center;
+      color: #f04c23;
+      margin-bottom: 30px;
+      font-size: 1rem;
+    }
+
+    #uiux-section iframe {
+      width: 100%;
+      height: 100vh;
+      border: none;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+
+  <div class="scene-time" id="sceneTimeUIUX">SCENE 04 | TIME --:--:--</div>
+
+  <div class="scene-script">
+  INT. PROTOTYPE THEATER – <span id="uiuxTimeOfDay">DAY</span><br>
+  Frames stage behavior. Motion tells mood. Design becomes direction.
+</div>
+
+
+  <iframe 
+    src="uiux.html"
+    loading="lazy">
+  </iframe>
+
+  <script>
+    function updateSceneTimeUIUX() {
+      const now = new Date();
+      const h = now.getHours();
+      const m = now.getMinutes();
+      const s = now.getSeconds();
+      const pad = n => n.toString().padStart(2, '0');
+
+      document.getElementById("sceneTimeUIUX").textContent = `SCENE 04 | TIME ${pad(h)}:${pad(m)}:${pad(s)}`;
+
+      const timeOfDay = (h >= 6 && h < 18) ? "DAY" : "NIGHT";
+      document.getElementById("uiuxTimeOfDay").textContent = timeOfDay;
+    }
+
+    setInterval(updateSceneTimeUIUX, 1000);
+    updateSceneTimeUIUX();
+  </script>
+</section>
+
 
 
 
 <!-- Certifications -->
-<section id="certifications" class="glass-section dark">
+<section id="certifications" style="position: relative; padding: 100px 20px; background: #0a0a0a; color: #f1f1f1; font-family: 'Space Mono', monospace;">
+  <style>
+    #certifications .container {
+      max-width: 1000px;
+      margin: auto;
+      z-index: 2;
+      position: relative;
+    }
+
+    #certifications h2 {
+      text-align: center;
+      font-size: 2.6rem;
+      margin-bottom: 40px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      background: linear-gradient(to right, #ccc, #fff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    #certifications .scene-time {
+      position: absolute;
+      top: 16px;
+      left: 20px;
+      font-size: 0.9rem;
+      background: #111;
+      padding: 6px 12px;
+      color: #bbb;
+      border-radius: 6px;
+      border: 1px solid rgba(255,255,255,0.1);
+      z-index: 4;
+    }
+
+    #certifications .scene-script {
+      font-size: 1rem;
+      color: #f04c23;
+      text-align: center;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    #certifications .cards {
+      display: grid;
+      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    #certifications .card {
+      background: rgba(255,255,255,0.03);
+      padding: 20px 24px;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    #certifications .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 30px rgba(255,255,255,0.06);
+    }
+
+    #certifications .card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+
+    #certifications .card p {
+      font-size: 0.95rem;
+      color: #bbb;
+    }
+  </style>
+
+  <div class="scene-time" id="certTime">SCENE 05 | TIME --:--:--</div>
+
   <div class="container">
+    <div class="scene-script">
+      INT. ARCHIVE ROOM – <span id="certTimeOfDay">DAY</span><br>
+      Certificates stacked. Knowledge archived. Skills unlocked.
+    </div>
+
     <h2>Certifications</h2>
     <div class="cards">
       <article class="card">
@@ -597,167 +1051,496 @@
       </article>
     </div>
   </div>
+
+  <script>
+    function updateCertSceneTime() {
+      const now = new Date();
+      const pad = n => n.toString().padStart(2, '0');
+      const h = now.getHours();
+      const m = now.getMinutes();
+      const s = now.getSeconds();
+      const tod = (h >= 6 && h < 18) ? "DAY" : "NIGHT";
+
+      document.getElementById("certTime").textContent = `SCENE 05 | TIME ${pad(h)}:${pad(m)}:${pad(s)}`;
+      document.getElementById("certTimeOfDay").textContent = tod;
+    }
+
+    setInterval(updateCertSceneTime, 1000);
+    updateCertSceneTime();
+  </script>
 </section>
+
 <br>
 <br>
 <!-- Timeline -->
-<section id="timeline" class="glass-section">
-  <div class="container">
-    <h2>Timeline</h2>
-    <ul class="timeline">
-      <li><strong>2024–Present:</strong> Chairperson, SRGEC ACM Student Chapter — Organized technical events and led community growth.</li>
-      <li><strong>2024:</strong> ML Intern @ SmartInternz — Real-time predictive modeling using TensorFlow and scikit-learn.</li>
-      <li><strong>2022–Present:</strong> B.Tech in Information Technology — 8.85 CGPA</li>
-      <li><strong>2020–2022:</strong> Intermediate (MPC) — 92.4%</li>
-    </ul>
-  </div>
-</section>
-<br>
-<br>
-<!-- Resume -->
-<section id="resume" class="glass-section dark">
-  <div class="container">
-    <h2>Resume</h2>
-    <p>You can download my resume below.</p>
-    <br>
-    <a href="resources/Purushothama_Datta_Thota.pdf" download class="btn primary" target="_blank" rel="noopener noreferrer">
-      📄 Download Resume
-    </a>
-  </div>
-</section>
-<br>
-<br>
-<section style="padding: 80px 20px; background: url('white-paper-texture.jpg') center/cover no-repeat; border-radius: 20px; max-width: 900px; margin: auto; box-shadow: 0 0 60px rgba(0,0,0,0.2);">
-
-  <h2 style="text-align: center; font-family: 'Playfair Display', serif; font-size: 3rem; color: #111; margin-bottom: 10px;">
-    Connect Me
-  </h2>
-
- <h3 style="text-align: center; font-family: 'Dancing Script', cursive; font-size: 2.5rem; color: #000; word-break: break-word; margin-bottom: 16px;">
-  dattathota988@gmail.com
-</h3>
-
-  <p style="text-align: center; font-family: 'Georgia', serif; font-style: italic; color: #444; font-size: 1.15rem; max-width: 650px; margin: 0 auto 20px; line-height: 1.7;">
-  Not just lines of code, but echoes of thought<br />
-  Crafted with care, from dreams long sought.
-</p>
-
-<p style="text-align: center; font-family: 'Georgia', serif; color: #333; font-size: 1.05rem; margin-bottom: 40px; line-height: 1.6;">
-  Behind every design lies a story untold,<br />
-  If you feel the spark- reach out, let’s unfold.
-</p>
-
- <div style="
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 20px;
-  max-width: 700px;
-  margin: 0 auto;
-  margin-top: 30px;
-  padding: 0 20px;
-">
-  <a href="https://www.linkedin.com/in/purushothama-datta/" target="_blank" class="btn-link-grid">
-    <img src="images/icons/linkedin.png" alt="LinkedIn" />
-    <span>LinkedIn</span>
-  </a>
-  <a href="https://github.com/datta-thota" target="_blank" class="btn-link-grid">
-    <img src="images/icons/github-sign.png" alt="GitHub" />
-    <span>GitHub</span>
-  </a>
-  <a href="mailto:dattathota988@gmail.com" class="btn-link-grid">
-    <img src="images/icons/gmail.png" alt="Email" />
-    <span>Email Me</span>
-  </a>
-  <a href="https://www.instagram.com/the_datta_01/" target="_blank" class="btn-link-grid">
-    <img src="images/icons/instagram.png" alt="Instagram" />
-    <span>Instagram</span>
-  </a>
-</div>
-
-<style>
-  .btn-link-grid {
-    background: rgba(255, 255, 255, 0.8);
-    padding: 14px 18px;
-    border-radius: 16px;
-    text-decoration: none;
-    color: #111;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: 'Georgia', serif;
-    font-size: 1rem;
-    font-weight: 500;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .btn-link-grid img {
-    width: 28px;
-    height: 28px;
-    margin-bottom: 8px;
-    transition: transform 0.3s ease;
-  }
-
-  .btn-link-grid:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
-  }
-
-  .btn-link-grid:hover img {
-    transform: scale(1.1);
-  }
-
-  @media (max-width: 600px) {
-    .btn-link-grid {
-      font-size: 0.95rem;
-    }
-
-    .btn-link-grid img {
-      width: 24px;
-      height: 24px;
-    }
-  }
-</style>
-
+<section id="timeline" style="position: relative; padding: 100px 20px; background: #0a0a0a; font-family: 'Space Mono', monospace; color: #f1f1f1; overflow: hidden;">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Playfair+Display&family=Noto+Serif+Telugu&display=swap');
-
-    .btn-link {
-      display: inline-block;
-      background: rgba(255, 255, 255, 0.85);
-      padding: 12px 22px;
-      border-radius: 12px;
-      text-decoration: none;
-      color: #111;
-      font-size: 1rem;
-      font-weight: 500;
-      transition: 0.3s ease;
-      width: 90%;
-      max-width: 300px;
-      text-align: center;
-      font-family: 'Georgia', serif;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    #timeline .container {
+      max-width: 900px;
+      margin: auto;
+      position: relative;
+      z-index: 2;
     }
 
-    .btn-link:hover {
-      background: #fff;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    #timeline h2 {
+      font-size: 2.6rem;
+      text-align: center;
+      margin-bottom: 60px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      background: linear-gradient(to right, #ccc, #fff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .scene-time {
+      position: absolute;
+      top: 16px;
+      left: 20px;
+      font-size: 0.9rem;
+      background: #111;
+      padding: 6px 12px;
+      color: #bbb;
+      border-radius: 6px;
+      border: 1px solid rgba(255,255,255,0.1);
+      z-index: 4;
+    }
+
+    .scene-script {
+      text-align: center;
+      color: #f04c23;
+      font-size: 1rem;
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
+
+    ul.timeline {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      position: relative;
+      border-left: 2px dashed rgba(255,255,255,0.1);
+    }
+
+    ul.timeline::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -10px;
+      width: 4px;
+      height: 100%;
+      background: repeating-linear-gradient(to bottom, #f04c23, #f04c23 6px, transparent 6px, transparent 14px);
+      animation: filmroll 10s linear infinite;
+      opacity: 0.1;
+    }
+
+    ul.timeline li {
+      padding: 20px 0 20px 20px;
+      position: relative;
+      font-size: 1rem;
+      color: #ddd;
+      opacity: 0;
+      transform: translateY(40px);
+      line-height: 1.7;
+    }
+
+    ul.timeline li::before {
+      content: "";
+      position: absolute;
+      left: -8px;
+      top: 24px;
+      width: 12px;
+      height: 12px;
+      background: #f04c23;
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px rgba(240, 76, 35, 0.3);
+    }
+
+    @keyframes filmroll {
+      0% { background-position-y: 0; }
+      100% { background-position-y: 100%; }
     }
 
     @media (max-width: 600px) {
-      h2 { font-size: 2.2rem; }
-      h3 { font-size: 1.4rem; }
-      .btn-link { font-size: 0.95rem; }
+      #timeline h2 { font-size: 2rem; }
+      ul.timeline li { font-size: 0.9rem; }
     }
   </style>
+
+  <!-- Scene Clock -->
+  <div class="scene-time" id="timelineTime">SCENE 06 | TIME --:--:--</div>
+
+  <div class="container">
+    <div class="scene-script">
+      INT. ARCHIVAL LANE – <span id="timelineTOD">DAY</span><br>
+      Flashbacks roll. Growth compiles. Journey unfolds.
+    </div>
+
+    <h2>Timeline</h2>
+
+    <ul class="timeline" id="timelineList">
+      <li>
+        <strong>2024–PRESENT:</strong><br>
+        INT. CAMPUS — DAY<br>
+        A leader emerges. As Chairperson of SRGEC ACM, Datta directs tech events like scenes, scripting energy into every gathering.
+      </li>
+      <li>
+        <strong>2023:</strong><br>
+        EXT. DESIGN STUDIO — DAY<br>
+        Figma flickers. Grids align. His portfolio isn't just made — it <em>moves</em>. Designs published. Behance beams back with applause.
+      </li>
+      <li>
+        <strong>2024:</strong><br>
+        INT. HACKATHON HALL — NIGHT<br>
+        Caffeine. Deadlines. Datta codes through the chaos. Sleepless but sharp — wins a regional hackathon with a design-first prototype.
+      </li>
+      <li>
+        <strong>2024:</strong><br>
+        INT. VIRTUAL LAB — NIGHT<br>
+        Sleepless and curious, he trains models that learn, adapt, and predict. A machine learning intern decoding tomorrow at SmartInternz.
+      </li>
+      <li>
+        <strong>2022–PRESENT:</strong><br>
+        EXT. COLLEGE — MORNING<br>
+        He enters the world of Information Technology. From code to creativity, he crafts 8.68 CGPA worth of digital storytelling.
+      </li>
+      <li>
+        <strong>2020–2022:</strong><br>
+        INT. STUDY DESK — MIDNIGHT<br>
+        Physics whispers. Calculus sings. With 92.4% in MPC, he lays the foundation beneath the frames of his future.
+      </li>
+    </ul>
+  </div>
+
+  <!-- Grain + Flicker -->
+  <div style="position:absolute;inset:0;z-index:0;pointer-events:none;mix-blend-mode:overlay;">
+    <div style="background: url('https://grainy-gradients.vercel.app/noise.svg'); width: 100%; height: 100%; opacity: 0.04;"></div>
+    <div style="background: repeating-linear-gradient(to bottom, rgba(255,255,255,0.01), rgba(255,255,255,0.01) 2px, transparent 2px, transparent 4px); height: 100%;"></div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script>
+    // Time Updater
+    function updateTimelineTime() {
+      const now = new Date();
+      const pad = n => n.toString().padStart(2, '0');
+      const h = now.getHours();
+      const m = now.getMinutes();
+      const s = now.getSeconds();
+      const tod = (h >= 6 && h < 18) ? "DAY" : "NIGHT";
+
+      document.getElementById("timelineTime").textContent = `SCENE 06 | TIME ${pad(h)}:${pad(m)}:${pad(s)}`;
+      document.getElementById("timelineTOD").textContent = tod;
+    }
+    setInterval(updateTimelineTime, 1000);
+    updateTimelineTime();
+
+    // GSAP Reveal
+    const items = document.querySelectorAll('#timelineList li');
+    items.forEach((item, i) => {
+      gsap.to(item, {
+        scrollTrigger: {
+          trigger: item,
+          start: "top 80%",
+        },
+        opacity: 1,
+        y: 0,
+        delay: i * 0.1,
+        duration: 1,
+        ease: "power3.out"
+      });
+    });
+  </script>
+</section>
+
+
+<br>
+<br>
+<!-- Resume -->
+<section id="resume" style="position: relative; padding: 100px 20px; background: #0a0a0a; color: #f1f1f1; font-family: 'Space Mono', monospace;">
+  <style>
+    #resume .container {
+      max-width: 720px;
+      margin: auto;
+      text-align: center;
+      z-index: 2;
+      position: relative;
+    }
+
+    #resume h2 {
+      font-size: 2.4rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+      background: linear-gradient(to right, #ccc, #fff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    #resume p {
+      font-size: 1rem;
+      color: #ccc;
+      margin-bottom: 30px;
+    }
+
+    #resume .btn {
+      display: inline-block;
+      background: #f1f1f1;
+      color: #000;
+      font-weight: bold;
+      padding: 12px 26px;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+
+    #resume .btn:hover {
+      background: #ffef00;
+    }
+
+    #resume .scene-time {
+      position: absolute;
+      top: 16px;
+      left: 20px;
+      font-size: 0.9rem;
+      background: #111;
+      padding: 6px 12px;
+      color: #bbb;
+      border-radius: 6px;
+      border: 1px solid rgba(255,255,255,0.1);
+      z-index: 4;
+    }
+
+    #resume .scene-script {
+      font-size: 1rem;
+      color: #f04c23;
+      text-align: center;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 600px) {
+      #resume h2 { font-size: 2rem; }
+    }
+  </style>
+
+  <div class="scene-time" id="resumeTime">SCENE 07 | TIME --:--:--</div>
+
+  <div class="container">
+    <div class="scene-script">
+      INT. ARCHIVE DESK – <span id="resumeTOD">DAY</span><br>
+      A single document. Many chapters. Ready to unfold.
+    </div>
+
+    <h2>Resume</h2>
+    <p>You can download my resume below.</p>
+
+    <a href="resources/Purushothama_Datta_Thota.pdf" download class="btn" target="_blank" rel="noopener noreferrer">
+      📄 Download Resume
+    </a>
+  </div>
+
+  <script>
+    function updateResumeClock() {
+      const now = new Date();
+      const pad = n => n.toString().padStart(2, '0');
+      const h = now.getHours();
+      const m = now.getMinutes();
+      const s = now.getSeconds();
+      const tod = (h >= 6 && h < 18) ? "DAY" : "NIGHT";
+
+      document.getElementById("resumeTime").textContent = `SCENE 07 | TIME ${pad(h)}:${pad(m)}:${pad(s)}`;
+      document.getElementById("resumeTOD").textContent = tod;
+    }
+
+    setInterval(updateResumeClock, 1000);
+    updateResumeClock();
+  </script>
+</section>
+
+<br>
+
+<section id="connect" style="position: relative; padding: 100px 30px; background: url('white-paper-texture.jpg') center/cover no-repeat; border-radius: 20px; max-width: 980px; margin: auto; box-shadow: 0 0 80px rgba(0,0,0,0.25); overflow: hidden; font-family: 'Georgia', serif;">
+
+  <!-- Timecode -->
+  <div id="connectSceneTime" style="position: absolute; top: 20px; left: 20px; font-family: 'Space Mono', monospace; background: rgba(255,255,255,0.9); padding: 6px 12px; border-radius: 6px; font-size: 0.9rem; color: #333; border: 1px solid rgba(0,0,0,0.1); z-index: 5;">
+    SCENE 08 | CLIMAX | TIME --:--:--
+  </div>
+
+  <!-- Script Moment -->
+  <div style="text-align: center; font-family: 'Space Mono', monospace; color: #e94c2e; font-size: 1rem; margin-bottom: 40px;">
+    EXT. FINAL CUT — <span id="connectTimeOfDay">DAY</span><br>
+    The screen fades to white. Silence speaks. The story... connects.
+  </div>
+
+  <!-- Main Heading -->
+  <h2 style="text-align: center; font-family: 'Playfair Display SC', serif; font-size: 3.2rem; color: #111; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px;">
+    Let’s Begin the Next Frame
+  </h2>
+
+  <!-- Quote -->
+  <p style="text-align: center; font-style: italic; font-size: 1.15rem; color: #444; max-width: 680px; margin: 0 auto 30px;">
+    Every masterpiece ends with a pause.<br>
+    If my work spoke to you, let’s script the sequel.
+  </p>
+
+  <!-- Email Highlight -->
+ <div style="text-align: center; margin-bottom: 60px;">
+  <div style="
+    font-family: 'Space Mono', monospace;
+    font-size: 1.2rem;
+    color: #0a0a0a;
+    background: linear-gradient(135deg, #fdfdfd, #eaeaea);
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 8px;
+    letter-spacing: 1px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  " onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='none'">
+    <span style="color: #111; font-weight: 600;">Reach Me At:</span><br>
+    <a href="mailto:dattathota988@gmail.com"
+       style="color: #f04c23; text-decoration: none; font-weight: bold;">
+      dattathota988@gmail.com
+    </a>
+  </div>
+</div>
+
+
+  <!-- Social Buttons -->
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 720px; margin: auto;">
+    <a href="https://www.linkedin.com/in/purushothama-datta/" target="_blank" class="social-btn">
+      <img src="images/icons/linkedin.png" alt="LinkedIn">LinkedIn
+    </a>
+    <a href="https://github.com/datta-thota" target="_blank" class="social-btn">
+      <img src="images/icons/github-sign.png" alt="GitHub">GitHub
+    </a>
+    <a href="mailto:dattathota988@gmail.com" class="social-btn">
+      <img src="images/icons/gmail.png" alt="Email">Email
+    </a>
+    <a href="https://www.instagram.com/the_datta_01/" target="_blank" class="social-btn">
+      <img src="images/icons/instagram.png" alt="Instagram">Instagram
+    </a>
+  </div>
+
+  <!-- Signature -->
+  <p style="text-align: center; font-family: 'Playfair Display SC', serif; font-size: 1.7rem; color: #222; margin-top: 60px; text-transform: uppercase;">
+    – Directed & Designed by Datta Thota
+  </p>
+
+  <!-- Overlay Grain -->
+  <div style="position:absolute;inset:0;pointer-events:none;z-index:0;">
+    <div style="background: url('https://grainy-gradients.vercel.app/noise.svg'); width: 100%; height: 100%; opacity: 0.03;"></div>
+    <div style="background: repeating-linear-gradient(to bottom, rgba(0,0,0,0.015), rgba(0,0,0,0.015) 2px, transparent 2px, transparent 4px); height: 100%;"></div>
+  </div>
+
+  <!-- Styling -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC&family=Space+Mono&display=swap');
+
+    .social-btn {
+      background: rgba(255,255,255,0.85);
+      padding: 14px 18px;
+      border-radius: 12px;
+      font-family: 'Georgia', serif;
+      text-decoration: none;
+      color: #111;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 120px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+
+    .social-btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.1);
+    }
+
+    .social-btn img {
+      width: 28px;
+      height: 28px;
+      margin-bottom: 6px;
+      transition: transform 0.3s ease;
+    }
+
+    .social-btn:hover img {
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 600px) {
+      .social-btn {
+        width: 100px;
+        font-size: 0.95rem;
+      }
+
+      .social-btn img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  </style>
+
+  <!-- JS: Clock + Time of Day -->
+  <script>
+    function updateClimaxScene() {
+      const now = new Date();
+      const pad = n => n.toString().padStart(2, '0');
+      const h = now.getHours();
+      const m = now.getMinutes();
+      const s = now.getSeconds();
+      const timeOfDay = (h >= 6 && h < 18) ? "DAY" : "NIGHT";
+
+      document.getElementById("connectSceneTime").textContent = `SCENE 08 | CLIMAX | TIME ${pad(h)}:${pad(m)}:${pad(s)}`;
+      document.getElementById("connectTimeOfDay").textContent = timeOfDay;
+    }
+
+    setInterval(updateClimaxScene, 1000);
+    updateClimaxScene();
+  </script>
 </section>
 
 
 
-<!-- Footer -->
-<footer>
-  <p>© 2025 Purushothama Datta Thota. All rights reserved.</p>
+<footer style="
+  background: #000;
+  color: #ccc;
+  padding: 60px 20px;
+  text-align: center;
+  font-family: 'Space Mono', monospace;
+  position: relative;
+  overflow: hidden;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+">
+  <div style="
+    font-size: 1.6rem;
+    color: #fdfdfd;
+    margin-bottom: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  ">
+    THE END
+  </div>
+
+  <p style="margin-bottom: 4px;">© 2025 Purushothama Datta Thota</p>
+  <p style="font-size: 0.85rem;">All rights reserved. Made with intent & insight.</p>
+
+  <!-- Grain -->
+  <div style="
+    position: absolute;
+    inset: 0;
+    background: url('https://grainy-gradients.vercel.app/noise.svg');
+    opacity: 0.06;
+    pointer-events: none;
+    z-index: 1;
+  "></div>
 </footer>
 
 <!-- Scripts -->
