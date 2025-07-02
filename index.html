@@ -386,9 +386,67 @@
   <div class="script-block" id="scriptBlock">
     <div class="line" id="scriptText"></div>
     <div class="credit">Purushothama Datta Thota</div>
-    <div style="text-align:center">
-      <a href="https://www.behance.net/dattathota" class="behance-btn" target="_blank">🎞️ Check Behance</a>
-    </div>
+    <!-- Font Import -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
+
+<!-- Cinematic Reel Scroll -->
+<div class="reel-scroll">
+ <div class="reel-track">
+  <span>🎬 IMAGINED — </span>
+  <span>🎞️ SKETCHED — </span>
+  <span>📽️ CRAFTED — </span>
+  <span>🎬 DESIGNED — </span>
+  <span>🎞️ FRAMED — </span>
+  <span>📽️ REFINED — </span>
+  <span>🎬 SHOT — </span>
+  <span>🎞️ EDITED — </span>
+  <span>📽️ REVEALED — </span>
+  <span>🎬 DIRECTED — </span>
+  <span>🎞️ DELIVERED — </span>
+  <span>📽️ BEGIN. — </span>
+</div>
+
+</div>
+
+<!-- Styling -->
+<style>
+.reel-scroll {
+  overflow: hidden;
+  white-space: nowrap;
+  background: black;
+  color: #fff;
+  padding: 12px 0;
+  border-top: 1px solid #444;
+  border-bottom: 1px solid #444;
+}
+
+.reel-track {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll-left 18s linear infinite;
+  font-family: 'Cinzel', serif;
+  font-size: 1.4rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.reel-track span {
+  padding: 0 2rem;
+  display: inline-block;
+  color: #ccc;
+  opacity: 0.9;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+</style>
+
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
