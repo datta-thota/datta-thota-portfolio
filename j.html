@@ -2,41 +2,48 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Datta Thota Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Great+Vibes&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Meow+Script&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet" />
-<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
 
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Meow+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
+
     html, body {
       height: 100%;
-      background: #fff;
       overflow: hidden;
+      background: #fff;
       font-family: 'Archivo Black', sans-serif;
     }
+
     .hero {
       position: relative;
       width: 100%;
-  min-height: 100vh;
-      overflow: hidden;
+      min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
+      overflow: hidden;
     }
+
     .bg-stripe {
       position: absolute;
       width: 100%;
       height: 33.333%;
       z-index: 0;
     }
-    .bg-top { top: 0; background: #ffecd2; }
+
+    .bg-top    { top: 0; background: #ffecd2; }
     .bg-middle { top: 33.333%; background: #3d5af1; }
     .bg-bottom { bottom: 0; background: #f26b6b; }
 
@@ -45,236 +52,250 @@
       text-transform: uppercase;
       color: transparent;
       -webkit-text-stroke: 2px black;
-      display: flex;
-      position: relative;
-      z-index: 1;
       letter-spacing: 0.05em;
+      display: flex;
+      z-index: 1;
+      position: relative;
     }
+
     .title span {
       opacity: 0;
     }
-    .name {
-  position: absolute;
-  bottom: 10%; /* decrease to move lower */
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-  font-family: 'Meow Script', cursive;
-  font-size: 15vw;
-  color: white;
-  white-space: nowrap;
+.bg-top {
+  background: url('top.jpg') no-repeat center center;
+  background-size: cover;
 }
+
+.bg-middle {
+  background: url('middle.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+.bg-bottom {
+  background: url('bottom.png') no-repeat center center;
+  background-size: cover;
+}
+
+    .name {
+      position: absolute;
+      bottom: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Meow Script', cursive;
+      font-size: 15vw;
+      color: white;
+      white-space: nowrap;
+      z-index: 2;
+    }
 
     .photo {
       position: absolute;
-      z-index: 1;
       height: 90vh;
       bottom: 0;
       object-fit: contain;
       pointer-events: none;
-   filter: grayscale(100%) brightness(70%) ;
-
-
+      filter: grayscale(100%) brightness(70%);
+      z-index: 1;
     }
 
-.scrolling-text {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  overflow: hidden;
-  white-space: nowrap;
-  z-index: 10;
-  background: rgba(0, 0, 0, 0.7);
-  padding: 0.5rem 0;
-  backdrop-filter: blur(5px);
-}
+    .scrolling-text {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 0.5rem 0;
+      z-index: 10;
+      backdrop-filter: blur(5px);
+    }
 
-.scrolling-inner {
-  display: inline-block;
-  white-space: nowrap;
-  font-size: 1.6vw;
-  color: #fff;
-  font-weight: bold;
-  font-family: 'Archivo Black', sans-serif;
-  letter-spacing: 0.05em;
-}
-@media (max-width: 768px) {
-  .title {
-    font-size: 15vw;
-    -webkit-text-stroke: 0.8px rgb(0, 0, 0);
-    letter-spacing: 0.02em;
-  }
+    .scrolling-inner {
+      display: inline-block;
+      white-space: nowrap;
+      font-size: 1.6vw;
+      color: #fff;
+      font-weight: bold;
+      font-family: 'Archivo Black', sans-serif;
+      letter-spacing: 0.05em;
+    }
 
+    .hero-quote {
+      display: none;
+    }
 
-  .name {
-    font-size: 12vw;
-    bottom: 10%;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-  }
+    .mobile-note {
+      display: none;
+      position: fixed;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255, 255, 255, 0.1);
+      color: #ccc;
+      padding: 6px 14px;
+      font-size: 3.5vw;
+      border-radius: 12px;
+      z-index: 999;
+      font-family: 'Archivo Black', sans-serif;
+      text-align: center;
+      white-space: nowrap;
+      pointer-events: none;
+    }
 
-  .photo {
-    height: 70vh;
-    bottom: 0;
-    filter: grayscale(80%) brightness(80%) contrast(1.1);
-  }
+    /* Animations */
+    @keyframes fadeSlideIn {
+      from {
+        opacity: 0;
+        transform: translate(-50%, 20px);
+      }
+      to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+      }
+    }
 
-  .scrolling-inner {
-    font-size: 4.5vw;
-  }
+    @keyframes fadeInQuote {
+      from {
+        opacity: 0;
+        transform: translateY(20px) translateX(-50%);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) translateX(-50%);
+      }
+    }
 
-  .scrolling-text {
-    padding: 0.7rem 0;
-    background: linear-gradient(to right, #111, #222);
-    border-bottom: 2px solid #3d5af1;
-  }
-}
+    /* Tablet & Mobile Styles */
+    @media (max-width: 768px) {
+      .title {
+      font-size: 15vw;
+      text-transform: uppercase;
+      color: transparent;
+      -webkit-text-stroke: 1px black;
+      letter-spacing: 0.05em;
+      display: flex;
+      z-index: 1;
+      position: relative;
+    }
 
-@media (max-width: 480px) {
-  .title {
-font-family: 'Anton', sans-serif;  font-size: 19vw;
-  color: #f0f4f8; /* light, soft fill color */
-  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.6); /* slightly thicker, semi-transparent black stroke */
-  letter-spacing: 0.04em;
-  margin-top: -8vh;
-  line-height: 1;
-  text-transform: uppercase; /* optional */
-  user-select: none;
-}
+      .name {
+        font-size: 12vw;
+        bottom: 10%;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+      }
 
-  .name {
-    font-size: 14vw;
-    bottom: 16%;
-    transform: translate(-50%, 0);
-    font-family: 'Great Vibes', cursive;
+      .photo {
+        height: 70vh;
+        filter: grayscale(100%) brightness(100%) ;
+      }
 
-  }
+      .scrolling-inner {
+        font-size: 4.5vw;
+      }
 
-  .photo {
-    height: 50vh;
-    bottom: 0;
-    
-  }
+      .scrolling-text {
+        padding: 0.7rem 0;
+        background: linear-gradient(to right, #111, #222);
+        border-bottom: 2px solid #3d5af1;
+      }
 
-  .scrolling-inner {
-    font-size: 5.5vw;
-  }
-}
-@keyframes fadeSlideIn {
-  from {
-    opacity: 0;
-    transform: translate(-50%, 20px);
-  }
-  to {
-    opacity: 1;
-    transform: translate(-50%, 0);
-  }
-}
+      .mobile-note {
+        display: block;
+      }
+    }
 
-.hero-quote {
-  display: none; /* Hidden by default */
-}
+    /* Small Mobile Styles */
+    @media (max-width: 480px) {
+      body {
+        padding-bottom: 60px;
+      }
 
-/* Show only on mobile screens */
-@media (max-width: 480px) {
-  body {
-  padding-bottom: 60px; /* adds room below */
-}
+      .title {
+      font-size: 15vw;
+      text-transform: uppercase;
+      color: transparent;
+      -webkit-text-stroke: 2px rgb(0, 0, 0);
+      letter-spacing: 0.05em;
+      display: flex;
+      z-index: 1;
+      position: relative;
+    }
 
+      .name {
+        font-size: 14vw;
+        bottom: 16%;
+        transform: translate(-50%, 0);
+        font-family: 'Great Vibes', cursive;
+      }
 
+      .photo {
+        height: 50vh;
+        bottom: 0;
+      }
 
-  .hero-quote span {
-    color: #ff003c;
-    font-style: italic;
-  }
- .bg-top {
-  background: url('ddd.png') no-repeat center center;
-  background-size: cover;
-}
+      .scrolling-inner {
+        font-size: 5.5vw;
+      }
 
-/* Slightly deeper, elegant teal for contrast */
-.bg-middle {
-background: url('jj.jpg') no-repeat center center;
-  background-size: cover;}
+      .hero-quote span {
+        color: #ff003c;
+        font-style: italic;
+      }
 
-.bg-bottom {
-  background: #d0e6f7; /* Warm parchment cream */
-}
+      .bg-top {
+        background: url('top.jpg') no-repeat center center;
+        background-size: cover;
+      }
 
+      .bg-middle {
+        background: url('middle.jpg') no-repeat center center;
+        background-size: cover;
+      }
 
-}
-
-@keyframes fadeInQuote {
-  from {
-    opacity: 0;
-    transform: translateY(20px) translateX(-50%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) translateX(-50%);
-  }
-}
-
-.mobile-note {
-  display: none;
-  position: fixed;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(255, 255, 255, 0.1);
-  color: #ccc;
-  padding: 6px 14px;
-  font-size: 3.5vw;
-  border-radius: 12px;
-  z-index: 999;
-  font-family: 'Archivo Black', sans-serif;
-  text-align: center;
-  white-space: nowrap;
-  pointer-events: none;
-}
-
-@media (max-width: 768px) {
-  .mobile-note {
-    display: block;
-  }
-}
-
+      .bg-bottom {
+background: url('bottom.png') no-repeat center center;
+        background-size: cover;      }
+    }
   </style>
 </head>
+
 <body>
-    <div class="scrolling-text">
-  <div class="scrolling-inner">
-   <span>Designer – Developer – Human • </span>
-<span>Thinker – Maker – Coder • </span>
-<span>Clean – Simple – Effective • </span>
-<span>Ideas – Code – Impact • </span>
-<span>Focus – Flow – Finish • </span>
-<span>Sketch – Build – Ship • </span>
-<span>Neat – Sharp – Clear • </span>
-
-
+  <!-- Scrolling Header -->
+  <div class="scrolling-text">
+    <div class="scrolling-inner">
+      <span>Designer – Developer – Human • </span>
+      <span>Thinker – Maker – Coder • </span>
+      <span>Clean – Simple – Effective • </span>
+      <span>Ideas – Code – Impact • </span>
+      <span>Focus – Flow – Finish • </span>
+      <span>Sketch – Build – Ship • </span>
+      <span>Neat – Sharp – Clear • </span>
+    </div>
   </div>
-</div>
 
+  <!-- Hero Section -->
   <div class="hero">
     <div class="bg-stripe bg-top"></div>
     <div class="bg-stripe bg-middle"></div>
     <div class="bg-stripe bg-bottom"></div>
+
     <h1 class="title" id="title">
       <span>P</span><span>O</span><span>R</span><span>T</span><span>F</span><span>O</span><span>L</span><span>I</span><span>O</span>
     </h1>
+
     <div class="name">Datta Thota</div>
-    <img src="dp1.png" alt="Profile" class="photo" />
+    <img src="dp2.png" alt="Profile" class="photo" />
   </div>
-  
 
-
-
+  <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script>
-    gsap.fromTo(".bg-top", {y: "-100%"}, {y: 0, duration: 1.2, ease: "power4.out"});
-    gsap.fromTo(".bg-middle", {x: "-100%"}, {x: 0, duration: 1.2, delay: 0.3, ease: "power4.out"});
-    gsap.fromTo(".bg-bottom", {y: "100%"}, {y: 0, duration: 1.2, delay: 0.6, ease: "power4.out"});
+    // Background stripes
+    gsap.fromTo(".bg-top", { y: "-100%" }, { y: 0, duration: 1.2, ease: "power4.out" });
+    gsap.fromTo(".bg-middle", { x: "-100%" }, { x: 0, duration: 1.2, delay: 0.3, ease: "power4.out" });
+    gsap.fromTo(".bg-bottom", { y: "100%" }, { y: 0, duration: 1.2, delay: 0.6, ease: "power4.out" });
 
+    // Title animation
     gsap.to(".title span", {
       opacity: 1,
       y: 0,
@@ -284,6 +305,7 @@ background: url('jj.jpg') no-repeat center center;
       ease: "back.out(1.7)"
     });
 
+    // Name animation
     gsap.from(".name", {
       y: 100,
       opacity: 0,
@@ -292,6 +314,7 @@ background: url('jj.jpg') no-repeat center center;
       ease: "expo.out"
     });
 
+    // Image animation
     gsap.from(".photo", {
       scale: 1.3,
       y: 200,
@@ -299,12 +322,14 @@ background: url('jj.jpg') no-repeat center center;
       delay: 1.2,
       ease: "power3.out"
     });
+
+    // Scrolling text animation
     gsap.to(".scrolling-inner", {
-    xPercent: -50,
-    repeat: -1,
-    duration: 20,
-    ease: "linear"
-  });
+      xPercent: -50,
+      repeat: -1,
+      duration: 20,
+      ease: "linear"
+    });
   </script>
 </body>
 </html>
