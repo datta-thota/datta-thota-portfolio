@@ -282,6 +282,7 @@
   <iframe src="j.html" style="width:100%; height:100vh; border:none;" loading="lazy"></iframe>
 </header>
 
+  <iframe src="sketch.html" style="width:100%; height:100vh; border:none;" loading="lazy"></iframe>
 
 
 
@@ -289,10 +290,11 @@
 <br>
 <!-- About -->
 <!-- About -->
-<section id="about" style="position: relative; padding: 140px 20px; background: #0a0a0a; color: #f1f1f1; overflow: hidden; font-family: 'Space Mono', monospace;">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+<section id="about" style="position: relative; padding: 140px 20px; background: #1a1a1a; color: #f1f1f1; overflow: hidden; font-family: 'Shadows Into Light', cursive;">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono&family=Shadows+Into+Light&family=Cinzel:wght@700&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
+  <style>
     #about::before {
       content: "";
       position: absolute;
@@ -323,61 +325,81 @@
       position: absolute;
       top: 16px;
       left: 20px;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       background: #111;
-      padding: 6px 12px;
+      padding: 6px 14px;
       color: #bbb;
       border-radius: 6px;
       border: 1px solid rgba(255,255,255,0.1);
+      font-family: 'Space Mono', monospace;
       z-index: 4;
     }
 
     #about .script-block {
       max-width: 820px;
       margin: 0 auto;
-      padding: 20px;
-      background: #0d0d0d;
+      padding: 32px;
+      background: #0f0f0f;
       box-shadow: 0 0 80px rgba(255,255,255,0.02);
       position: relative;
       z-index: 5;
       opacity: 0;
       transform: translateY(60px);
+      border: 1px solid rgba(255,255,255,0.06);
     }
 
     .line {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      margin-bottom: 10px;
+      font-size: 1.2rem;
+      line-height: 2;
+      margin-bottom: 14px;
       white-space: pre-wrap;
+      color: #eeeeee;
     }
 
     .credit {
       margin-top: 40px;
       font-size: 1.8rem;
-      font-weight: bold;
+      font-family: 'Cinzel', serif;
       text-align: center;
-      color: #fdfdfd;
+      color: #fef68a;
     }
 
-    .behance-btn {
-      margin-top: 20px;
+    .reel-scroll {
+      overflow: hidden;
+      white-space: nowrap;
+      background: #000;
+      color: #fff;
+      padding: 12px 0;
+      border-top: 1px solid #333;
+      border-bottom: 1px solid #333;
+    }
+
+    .reel-track {
       display: inline-block;
-      background: #fff;
-      color: #000;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 12px 26px;
-      border-radius: 8px;
-      transition: all 0.3s ease;
+      white-space: nowrap;
+      animation: scroll-left 20s linear infinite;
+      font-family: 'Cinzel', serif;
+      font-size: 1.3rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
     }
 
-    .behance-btn:hover {
-      background: #eee;
+    .reel-track span {
+      padding: 0 2rem;
+      display: inline-block;
+      color: #ccc;
+      opacity: 0.9;
+    }
+
+    @keyframes scroll-left {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
     }
 
     @media (max-width: 768px) {
       .line { font-size: 1rem; }
       .credit { font-size: 1.4rem; }
+      .scene-time { font-size: 0.7rem; padding: 5px 10px; }
     }
   </style>
 
@@ -386,90 +408,44 @@
   <div class="script-block" id="scriptBlock">
     <div class="line" id="scriptText"></div>
     <div class="credit">Purushothama Datta Thota</div>
-    <!-- Font Import -->
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
-
-<!-- Cinematic Reel Scroll -->
-<div class="reel-scroll">
- <div class="reel-track">
-  <span>🎬 IMAGINED — </span>
-  <span>🎞️ SKETCHED — </span>
-  <span>📽️ CRAFTED — </span>
-  <span>🎬 DESIGNED — </span>
-  <span>🎞️ FRAMED — </span>
-  <span>📽️ REFINED — </span>
-  <span>🎬 SHOT — </span>
-  <span>🎞️ EDITED — </span>
-  <span>📽️ REVEALED — </span>
-  <span>🎬 DIRECTED — </span>
-  <span>🎞️ DELIVERED — </span>
-  <span>📽️ BEGIN. — </span>
-</div>
-
-</div>
-
-<!-- Styling -->
-<style>
-.reel-scroll {
-  overflow: hidden;
-  white-space: nowrap;
-  background: black;
-  color: #fff;
-  padding: 12px 0;
-  border-top: 1px solid #444;
-  border-bottom: 1px solid #444;
-}
-
-.reel-track {
-  display: inline-block;
-  white-space: nowrap;
-  animation: scroll-left 18s linear infinite;
-  font-family: 'Cinzel', serif;
-  font-size: 1.4rem;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-}
-
-.reel-track span {
-  padding: 0 2rem;
-  display: inline-block;
-  color: #ccc;
-  opacity: 0.9;
-}
-
-@keyframes scroll-left {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-</style>
-
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <div class="reel-scroll">
+    <div class="reel-track">
+      <span>🎬 IMAGINED — </span>
+      <span>🎞️ SKETCHED — </span>
+      <span>📽️ CRAFTED — </span>
+      <span>🎬 DESIGNED — </span>
+      <span>🎞️ FRAMED — </span>
+      <span>📽️ REFINED — </span>
+      <span>🎬 SHOT — </span>
+      <span>🎞️ EDITED — </span>
+      <span>📽️ REVEALED — </span>
+      <span>🎬 DIRECTED — </span>
+      <span>🎞️ DELIVERED — </span>
+      <span>📽️ BEGIN. — </span>
+    </div>
+  </div>
+
   <script>
     const lines = [
-  "INT. DATTA’S MIND — NIGHT",
-  "",
-  "Not just a screen. A vision.",
-  "Design breathes. Code listens.",
-  "",
-  "Each bug? A challenge.",
-  "Each pixel? A decision.",
-  "",
-  "He doesn’t just build interfaces.",
-  "He crafts journeys.",
-  "",
-  "This isn’t UI.",
-  "This is storytelling.",
-  "",
-  "Purushothama Datta —",
-  "Engineer by skill. Designer by heart."
-];
-
+      "INT. DATTA’S MIND — NIGHT",
+      "",
+      "Not just a screen. A vision.",
+      "Design breathes. Code listens.",
+      "",
+      "Each bug? A challenge.",
+      "Each pixel? A decision.",
+      "",
+      "He doesn’t just build interfaces.",
+      "He crafts journeys.",
+      "",
+      "This isn’t UI.",
+      "This is storytelling.",
+      "",
+      "Purushothama Datta —",
+      "Engineer by skill. Designer by heart."
+    ];
 
     const scriptEl = document.getElementById('scriptText');
     const block = document.getElementById('scriptBlock');
@@ -514,15 +490,11 @@
           clearInterval(interval);
           typeLine(index + 1);
         }
-      }, 70);
+      }, 65);
     }
   </script>
 </section>
 
-
-
-
-<br>
 <br>
 <section id="skills" style="position: relative; padding: 100px 20px; background: rgba(10,10,10,0.95); overflow: hidden; font-family: 'Space Mono', monospace; color: #f1f1f1;">
   <style>
