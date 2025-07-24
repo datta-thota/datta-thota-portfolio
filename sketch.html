@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>DATTA — Director’s Sketchbook</title>
+  <title>Director’s Sketchbook</title>
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&family=Shadows+Into+Light&display=swap" rel="stylesheet"/>
@@ -365,44 +365,71 @@
     const angles = [-10, -5, -3, 0, 3, 5, 10];
 
     const cols = 5;
-    const rows = 4;
+    const rows = 5;
     const hSpacing = window.innerWidth / (cols + 0.5);
     const vSpacing = 300;
-    let index = 0;
 
-    for (let r = 0; r < rows; r++) {
-      for (let c = 0; c < cols; c++) {
-        index++;
-        if (index > 20) break;
+    const imageLinks = [
+  "https://res.cloudinary.com/dl75qwr19/image/upload/v1753287377/design1_qjgqkm.png",
+  "https://res.cloudinary.com/dl75qwr19/image/upload/v1753287379/design2_rm2e94.png",
+  "https://res.cloudinary.com/dl75qwr19/image/upload/v1753287381/design3_lbm9ar.png",
+  "https://res.cloudinary.com/dl75qwr19/image/upload/v1753287379/design4_jjidzw.png",
+  "https://res.cloudinary.com/dl75qwr19/image/upload/v1753287380/design5_jmbtl3.png",
+  "https://res.cloudinary.com/dl75qwr19/image/upload/v1753287381/design6_qexzre.png",
+  "https://res.cloudinary.com/dl75qwr19/image/upload/v1753287384/design7_mzrkfn.png",
+  "https://res.cloudinary.com/dl75qwr19/image/upload/v1753287382/design8_nueqlp.png",
+  "https://res.cloudinary.com/dl75qwr19/image/upload/v1753287386/design12_rkoihi.png",
+  "https://res.cloudinary.com/dl75qwr19/image/upload/v1753287391/design13_zxj8li.png",
+  "https://res.cloudinary.com/dl75qwr19/image/upload/v1753287384/design14_docox1.png",
+  "https://res.cloudinary.com/dl75qwr19/image/upload/v1753287384/design15_iz6ytv.png",
+  "https://res.cloudinary.com/dl75qwr19/image/upload/v1753287386/design16_zfak8x.png",
+  "https://res.cloudinary.com/dl75qwr19/image/upload/v1753287385/design17_i0bpye.png",
+  "https://res.cloudinary.com/dl75qwr19/image/upload/v1753287393/design18_zb9rup.png",
+  "https://res.cloudinary.com/dl75qwr19/image/upload/v1753287388/design19_ahamhx.png",
+  "https://res.cloudinary.com/dl75qwr19/image/upload/v1753287387/design20_hvh7f4.png",
+  "https://res.cloudinary.com/dl75qwr19/image/upload/v1753287395/design11_rcealu.png",
+  "https://res.cloudinary.com/dl75qwr19/image/upload/v1753287388/design21_xjtxv6.png",
+  "https://res.cloudinary.com/dl75qwr19/image/upload/v1753287381/design3_lbm9ar.png",
+  "https://res.cloudinary.com/dl75qwr19/image/upload/v1753331130/design10_ar2reo.png",
+  "https://res.cloudinary.com/dl75qwr19/image/upload/v1753331129/design9_x9sxyf.png",
+  "https://res.cloudinary.com/dl75qwr19/image/upload/v1753331297/Instagram_post_-_18_n8jthn.png",
+  "https://res.cloudinary.com/dl75qwr19/image/upload/v1753331290/Instagram_post_-_17_oxuvjl.png"
+];
 
-        const card = document.createElement('div');
-        card.className = 'polaroid';
-        card.style.setProperty('--angle', angles[Math.floor(Math.random() * angles.length)] + 'deg');
+let index = -1; // Start from -1 so the first ++ becomes 0
 
-        const left = (c + 0.5) * hSpacing + (Math.random() * 30 - 15);
-        const top = (r + 1) * vSpacing + (Math.random() * 30 - 15);
-        card.style.left = `${left}px`;
-        card.style.top = `${top}px`;
+for (let r = 0; r < rows; r++) {
+  for (let c = 0; c < cols; c++) {
+    index++;
+    if (index >= imageLinks.length) break;
 
-        const img = document.createElement('img');
-        img.src = `designs/design${index}.png`;
-        img.alt = `Design ${index}`;
-        card.appendChild(img);
+    const card = document.createElement('div');
+    card.className = 'polaroid';
+    card.style.setProperty('--angle', angles[Math.floor(Math.random() * angles.length)] + 'deg');
 
-        makeDraggable(card);
-        board.appendChild(card);
+    const left = (c + 0.5) * hSpacing + (Math.random() * 30 - 15);
+    const top = (r + 1) * vSpacing + (Math.random() * 30 - 15);
+    card.style.left = `${left}px`;
+    card.style.top = `${top}px`;
 
-        gsap.from(card, {
-          opacity: 0,
-          y: -80,
-          scale: 0.7,
-          duration: 0.6,
-          delay: index * 0.05,
-          ease: "power3.out"
-        });
-      }
-    }
+    const img = document.createElement('img');
+    img.src = imageLinks[index];
+    img.alt = `Design ${index + 1}`;
+    card.appendChild(img);
 
+    makeDraggable(card);
+    board.appendChild(card);
+
+    gsap.from(card, {
+      opacity: 0,
+      y: -80,
+      scale: 0.7,
+      duration: 0.6,
+      delay: index * 0.05,
+      ease: "power3.out"
+    });
+  }
+}
    const stickyNotes = [
   "Rough is real.",
   "Trust the mess.",
